@@ -1,0 +1,2351 @@
+{
+  "boundary": [
+    {
+      "id": "b01",
+      "sentence": "Der kleine Hund schläft am Nachmittag unter dem Küchentisch.",
+      "groups": [
+        "Der kleine Hund",
+        "schläft",
+        "am Nachmittag",
+        "unter dem Küchentisch"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "b02",
+      "sentence": "Unsere neue Mitschülerin liest in der Pause einen spannenden Roman.",
+      "groups": [
+        "Unsere neue Mitschülerin",
+        "liest",
+        "in der Pause",
+        "einen spannenden Roman"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "b03",
+      "sentence": "Am Morgen trägt Paul seinen schweren Rucksack in die Schule.",
+      "groups": [
+        "Am Morgen",
+        "trägt",
+        "Paul",
+        "seinen schweren Rucksack",
+        "in die Schule"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b04",
+      "sentence": "Die beiden Freunde besuchen am Samstag ihre Großeltern.",
+      "groups": [
+        "Die beiden Freunde",
+        "besuchen",
+        "am Samstag",
+        "ihre Großeltern"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "b05",
+      "sentence": "Nach dem Unterricht zeigt Mia ihrem Bruder das neue Fahrrad.",
+      "groups": [
+        "Nach dem Unterricht",
+        "zeigt",
+        "Mia",
+        "ihrem Bruder",
+        "das neue Fahrrad"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b06",
+      "sentence": "Wegen des starken Regens verschiebt die Klasse den Wandertag.",
+      "groups": [
+        "Wegen des starken Regens",
+        "verschiebt",
+        "die Klasse",
+        "den Wandertag"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b07",
+      "sentence": "Der erfahrene Koch bereitet mit großer Sorgfalt das Abendessen zu.",
+      "groups": [
+        "Der erfahrene Koch",
+        "bereitet",
+        "mit großer Sorgfalt",
+        "das Abendessen",
+        "zu"
+      ],
+      "predicateParts": [
+        "bereitet",
+        "zu"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "b08",
+      "sentence": "Im großen Garten beobachtet Lena die bunten Schmetterlinge.",
+      "groups": [
+        "Im großen Garten",
+        "beobachtet",
+        "Lena",
+        "die bunten Schmetterlinge"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b09",
+      "sentence": "Die junge Musikerin spielt am Abend ein schwieriges Klavierstück.",
+      "groups": [
+        "Die junge Musikerin",
+        "spielt",
+        "am Abend",
+        "ein schwieriges Klavierstück"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b10",
+      "sentence": "Aus großer Neugier öffnet Tom vorsichtig die alte Kiste.",
+      "groups": [
+        "Aus großer Neugier",
+        "öffnet",
+        "Tom",
+        "vorsichtig",
+        "die alte Kiste"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b11",
+      "sentence": "Der neue Schüler gibt seiner Lehrerin das ausgefüllte Formular.",
+      "groups": [
+        "Der neue Schüler",
+        "gibt",
+        "seiner Lehrerin",
+        "das ausgefüllte Formular"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b12",
+      "sentence": "Mit großer Geduld erklärt Lara ihrem kleinen Bruder die Aufgabe.",
+      "groups": [
+        "Mit großer Geduld",
+        "erklärt",
+        "Lara",
+        "ihrem kleinen Bruder",
+        "die Aufgabe"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b13",
+      "sentence": "Nach einer kurzen Pause beginnt die Mannschaft das Training.",
+      "groups": [
+        "Nach einer kurzen Pause",
+        "beginnt",
+        "die Mannschaft",
+        "das Training"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b14",
+      "sentence": "Der alte Kater schläft wegen der Hitze unter dem schattigen Baum.",
+      "groups": [
+        "Der alte Kater",
+        "schläft",
+        "wegen der Hitze",
+        "unter dem schattigen Baum"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b15",
+      "sentence": "In der letzten Stunde schreibt die Klasse einen kurzen Test.",
+      "groups": [
+        "In der letzten Stunde",
+        "schreibt",
+        "die Klasse",
+        "einen kurzen Test"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b16",
+      "sentence": "Der freundliche Verkäufer zeigt der Kundin mehrere neue Jacken.",
+      "groups": [
+        "Der freundliche Verkäufer",
+        "zeigt",
+        "der Kundin",
+        "mehrere neue Jacken"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "b17",
+      "sentence": "Vor dem Frühstück füttert Jonas die beiden Kaninchen.",
+      "groups": [
+        "Vor dem Frühstück",
+        "füttert",
+        "Jonas",
+        "die beiden Kaninchen"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "b18",
+      "sentence": "Wegen seiner Erkältung sagt Ben das Fußballtraining ab.",
+      "groups": [
+        "Wegen seiner Erkältung",
+        "sagt",
+        "Ben",
+        "das Fußballtraining",
+        "ab"
+      ],
+      "predicateParts": [
+        "sagt",
+        "ab"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "b19",
+      "sentence": "Die aufmerksame Schülerin schreibt die wichtigsten Informationen sorgfältig auf.",
+      "groups": [
+        "Die aufmerksame Schülerin",
+        "schreibt",
+        "die wichtigsten Informationen",
+        "sorgfältig",
+        "auf"
+      ],
+      "predicateParts": [
+        "schreibt",
+        "auf"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "b20",
+      "sentence": "Am späten Nachmittag bringt die Mutter den Kindern frisches Obst.",
+      "groups": [
+        "Am späten Nachmittag",
+        "bringt",
+        "die Mutter",
+        "den Kindern",
+        "frisches Obst"
+      ],
+      "difficulty": 2
+    }
+  ],
+  "move": [
+    {
+      "id": "m01",
+      "sentence": "Der Hund schläft am Nachmittag im Körbchen.",
+      "valid": [
+        "Am Nachmittag schläft der Hund im Körbchen.",
+        "Im Körbchen schläft der Hund am Nachmittag."
+      ]
+    },
+    {
+      "id": "m02",
+      "sentence": "Mia liest nach dem Unterricht ein neues Buch.",
+      "valid": [
+        "Nach dem Unterricht liest Mia ein neues Buch.",
+        "Ein neues Buch liest Mia nach dem Unterricht."
+      ]
+    },
+    {
+      "id": "m03",
+      "sentence": "Der junge Fuchs beobachtet im Garten die Hühner.",
+      "valid": [
+        "Im Garten beobachtet der junge Fuchs die Hühner.",
+        "Die Hühner beobachtet der junge Fuchs im Garten."
+      ]
+    },
+    {
+      "id": "m04",
+      "sentence": "Lena trägt wegen des Regens ihre neue Jacke.",
+      "valid": [
+        "Wegen des Regens trägt Lena ihre neue Jacke.",
+        "Ihre neue Jacke trägt Lena wegen des Regens."
+      ]
+    },
+    {
+      "id": "m05",
+      "sentence": "Ben löst mit großer Konzentration die schwierige Aufgabe.",
+      "valid": [
+        "Mit großer Konzentration löst Ben die schwierige Aufgabe.",
+        "Die schwierige Aufgabe löst Ben mit großer Konzentration."
+      ]
+    },
+    {
+      "id": "m06",
+      "sentence": "Am Freitag besucht unsere Klasse das Naturkundemuseum.",
+      "valid": [
+        "Unsere Klasse besucht am Freitag das Naturkundemuseum.",
+        "Das Naturkundemuseum besucht unsere Klasse am Freitag."
+      ]
+    },
+    {
+      "id": "m07",
+      "sentence": "Der Lehrer erklärt den Kindern nach der Pause die neue Regel.",
+      "valid": [
+        "Nach der Pause erklärt der Lehrer den Kindern die neue Regel.",
+        "Den Kindern erklärt der Lehrer nach der Pause die neue Regel.",
+        "Die neue Regel erklärt der Lehrer den Kindern nach der Pause."
+      ]
+    },
+    {
+      "id": "m08",
+      "sentence": "Im Sommer trägt meine Schwester häufig helle Kleidung.",
+      "valid": [
+        "Meine Schwester trägt im Sommer häufig helle Kleidung.",
+        "Helle Kleidung trägt meine Schwester im Sommer häufig."
+      ]
+    },
+    {
+      "id": "m09",
+      "sentence": "Aus Angst versteckt sich die Katze unter dem Bett.",
+      "valid": [
+        "Unter dem Bett versteckt sich die Katze aus Angst.",
+        "Aus Angst versteckt sich die Katze unter dem Bett."
+      ]
+    },
+    {
+      "id": "m10",
+      "sentence": "Mit großer Vorsicht öffnet Paul die alte Holzkiste.",
+      "valid": [
+        "Die alte Holzkiste öffnet Paul mit großer Vorsicht.",
+        "Paul öffnet mit großer Vorsicht die alte Holzkiste."
+      ]
+    }
+  ],
+  "predicate": [
+    {
+      "id": "p01",
+      "sentence": "Der Hund schläft im Körbchen.",
+      "parts": [
+        "schläft"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p02",
+      "sentence": "Mia liest einen Roman.",
+      "parts": [
+        "liest"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p03",
+      "sentence": "Jonas öffnet vorsichtig die Tür.",
+      "parts": [
+        "öffnet"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p04",
+      "sentence": "Die Kinder spielen im Garten.",
+      "parts": [
+        "spielen"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p05",
+      "sentence": "Meine Schwester hat ein neues Fahrrad bekommen.",
+      "parts": [
+        "hat",
+        "bekommen"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p06",
+      "sentence": "Der Hund hat den ganzen Nachmittag geschlafen.",
+      "parts": [
+        "hat",
+        "geschlafen"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p07",
+      "sentence": "Lena räumt nach dem Essen ihr Zimmer auf.",
+      "parts": [
+        "räumt",
+        "auf"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p08",
+      "sentence": "Ben schreibt die wichtigsten Informationen auf.",
+      "parts": [
+        "schreibt",
+        "auf"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p09",
+      "sentence": "Der Zug kommt am frühen Morgen an.",
+      "parts": [
+        "kommt",
+        "an"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p10",
+      "sentence": "Meine Mutter kauft am Samstag frisches Gemüse ein.",
+      "parts": [
+        "kauft",
+        "ein"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p11",
+      "sentence": "Die Klasse hat gestern einen Ausflug gemacht.",
+      "parts": [
+        "hat",
+        "gemacht"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p12",
+      "sentence": "Paul hat seinem Freund das Spiel erklärt.",
+      "parts": [
+        "hat",
+        "erklärt"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p13",
+      "sentence": "Die Mannschaft beginnt am Nachmittag das Training.",
+      "parts": [
+        "beginnt"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p14",
+      "sentence": "Der Lehrer verteilt die neuen Arbeitsblätter.",
+      "parts": [
+        "verteilt"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p15",
+      "sentence": "Mia bringt ihrem Bruder das Buch zurück.",
+      "parts": [
+        "bringt",
+        "zurück"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p16",
+      "sentence": "Der Hausmeister schließt am Abend alle Türen ab.",
+      "parts": [
+        "schließt",
+        "ab"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p17",
+      "sentence": "Die Kinder haben den verlorenen Ball gefunden.",
+      "parts": [
+        "haben",
+        "gefunden"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p18",
+      "sentence": "Lea packt am Morgen ihre Sportsachen ein.",
+      "parts": [
+        "packt",
+        "ein"
+      ],
+      "d": 2
+    },
+    {
+      "id": "p19",
+      "sentence": "Tom erzählt seiner Schwester eine spannende Geschichte.",
+      "parts": [
+        "erzählt"
+      ],
+      "d": 1
+    },
+    {
+      "id": "p20",
+      "sentence": "Der Bus fährt um sieben Uhr los.",
+      "parts": [
+        "fährt",
+        "los"
+      ],
+      "d": 2
+    }
+  ],
+  "subject": [
+    {
+      "id": "s01",
+      "sentence": "Der kleine Hund schläft unter dem Tisch.",
+      "subject": "Der kleine Hund",
+      "predicate": "schläft"
+    },
+    {
+      "id": "s02",
+      "sentence": "Unsere neue Mitschülerin liest einen Roman.",
+      "subject": "Unsere neue Mitschülerin",
+      "predicate": "liest"
+    },
+    {
+      "id": "s03",
+      "sentence": "Die beiden jungen Katzen spielen im Garten.",
+      "subject": "Die beiden jungen Katzen",
+      "predicate": "spielen"
+    },
+    {
+      "id": "s04",
+      "sentence": "Am Morgen fährt der erste Schulbus los.",
+      "subject": "der erste Schulbus",
+      "predicate": [
+        "fährt",
+        "los"
+      ]
+    },
+    {
+      "id": "s05",
+      "sentence": "Wegen des Regens bleibt unsere Klasse heute im Gebäude.",
+      "subject": "unsere Klasse",
+      "predicate": "bleibt"
+    },
+    {
+      "id": "s06",
+      "sentence": "Im Wald entdeckt ein aufmerksamer Wanderer frische Spuren.",
+      "subject": "ein aufmerksamer Wanderer",
+      "predicate": "entdeckt"
+    },
+    {
+      "id": "s07",
+      "sentence": "Den schweren Rucksack trägt mein älterer Bruder.",
+      "subject": "mein älterer Bruder",
+      "predicate": "trägt"
+    },
+    {
+      "id": "s08",
+      "sentence": "Das neue Computerspiel begeistert viele Jugendliche.",
+      "subject": "Das neue Computerspiel",
+      "predicate": "begeistert"
+    },
+    {
+      "id": "s09",
+      "sentence": "Am Nachmittag besucht meine beste Freundin ihre Großmutter.",
+      "subject": "meine beste Freundin",
+      "predicate": "besucht"
+    },
+    {
+      "id": "s10",
+      "sentence": "Unter dem alten Baum schläft ein erschöpfter Wanderer.",
+      "subject": "ein erschöpfter Wanderer",
+      "predicate": "schläft"
+    },
+    {
+      "id": "s11",
+      "sentence": "Die freundliche Verkäuferin zeigt der Kundin eine Jacke.",
+      "subject": "Die freundliche Verkäuferin",
+      "predicate": "zeigt"
+    },
+    {
+      "id": "s12",
+      "sentence": "Nach dem Unterricht erklärt unser Deutschlehrer die Hausaufgabe.",
+      "subject": "unser Deutschlehrer",
+      "predicate": "erklärt"
+    },
+    {
+      "id": "s13",
+      "sentence": "Die bunten Herbstblätter bedecken den ganzen Gehweg.",
+      "subject": "Die bunten Herbstblätter",
+      "predicate": "bedecken"
+    },
+    {
+      "id": "s14",
+      "sentence": "Im großen Aquarium schwimmen mehrere kleine Fische.",
+      "subject": "mehrere kleine Fische",
+      "predicate": "schwimmen"
+    },
+    {
+      "id": "s15",
+      "sentence": "Das schwere Gewitter überrascht die Wandergruppe.",
+      "subject": "Das schwere Gewitter",
+      "predicate": "überrascht"
+    }
+  ],
+  "accusative": [
+    {
+      "id": "a01",
+      "sentence": "Mia liest einen spannenden Roman.",
+      "obj": "einen spannenden Roman"
+    },
+    {
+      "id": "a02",
+      "sentence": "Der Hund frisst den großen Knochen.",
+      "obj": "den großen Knochen"
+    },
+    {
+      "id": "a03",
+      "sentence": "Unsere Klasse besucht das neue Museum.",
+      "obj": "das neue Museum"
+    },
+    {
+      "id": "a04",
+      "sentence": "Lena öffnet vorsichtig die schwere Tür.",
+      "obj": "die schwere Tür"
+    },
+    {
+      "id": "a05",
+      "sentence": "Ben trägt seinen neuen Rucksack.",
+      "obj": "seinen neuen Rucksack"
+    },
+    {
+      "id": "a06",
+      "sentence": "Der Koch bereitet das warme Abendessen zu.",
+      "obj": "das warme Abendessen",
+      "predicate": [
+        "bereitet",
+        "zu"
+      ]
+    },
+    {
+      "id": "a07",
+      "sentence": "Die Schülerin löst die schwierige Aufgabe.",
+      "obj": "die schwierige Aufgabe"
+    },
+    {
+      "id": "a08",
+      "sentence": "Der Hausmeister repariert das kaputte Fenster.",
+      "obj": "das kaputte Fenster"
+    },
+    {
+      "id": "a09",
+      "sentence": "Meine Schwester kauft ein neues Fahrrad.",
+      "obj": "ein neues Fahrrad"
+    },
+    {
+      "id": "a10",
+      "sentence": "Der Junge wirft den roten Ball.",
+      "obj": "den roten Ball"
+    },
+    {
+      "id": "a11",
+      "sentence": "Die Lehrerin verteilt die neuen Arbeitsblätter.",
+      "obj": "die neuen Arbeitsblätter"
+    },
+    {
+      "id": "a12",
+      "sentence": "Paul fotografiert den alten Kirchturm.",
+      "obj": "den alten Kirchturm"
+    },
+    {
+      "id": "a13",
+      "sentence": "Die Kinder bauen eine große Sandburg.",
+      "obj": "eine große Sandburg"
+    },
+    {
+      "id": "a14",
+      "sentence": "Der starke Wind bewegt die schweren Äste.",
+      "obj": "die schweren Äste"
+    },
+    {
+      "id": "a15",
+      "sentence": "Mia packt ihre Sportsachen ein.",
+      "obj": "ihre Sportsachen",
+      "predicate": [
+        "packt",
+        "ein"
+      ]
+    }
+  ],
+  "dative": [
+    {
+      "id": "d01",
+      "sentence": "Mia schenkt ihrem Bruder ein Buch.",
+      "obj": "ihrem Bruder"
+    },
+    {
+      "id": "d02",
+      "sentence": "Der Lehrer erklärt den Kindern die Aufgabe.",
+      "obj": "den Kindern"
+    },
+    {
+      "id": "d03",
+      "sentence": "Meine Mutter gibt mir einen Apfel.",
+      "obj": "mir"
+    },
+    {
+      "id": "d04",
+      "sentence": "Der Verkäufer zeigt der Kundin eine Jacke.",
+      "obj": "der Kundin"
+    },
+    {
+      "id": "d05",
+      "sentence": "Lena bringt ihrer Großmutter die Zeitung.",
+      "obj": "ihrer Großmutter"
+    },
+    {
+      "id": "d06",
+      "sentence": "Der Trainer erklärt den Spielern die neue Übung.",
+      "obj": "den Spielern"
+    },
+    {
+      "id": "d07",
+      "sentence": "Paul leiht seinem Freund einen Stift.",
+      "obj": "seinem Freund"
+    },
+    {
+      "id": "d08",
+      "sentence": "Die Ärztin gibt dem Patienten ein Medikament.",
+      "obj": "dem Patienten"
+    },
+    {
+      "id": "d09",
+      "sentence": "Meine Schwester erzählt mir eine Geschichte.",
+      "obj": "mir"
+    },
+    {
+      "id": "d10",
+      "sentence": "Der Vater bringt den Kindern frisches Obst.",
+      "obj": "den Kindern"
+    },
+    {
+      "id": "d11",
+      "sentence": "Ben zeigt seiner Freundin das Foto.",
+      "obj": "seiner Freundin"
+    },
+    {
+      "id": "d12",
+      "sentence": "Die Lehrerin reicht dem Schüler das Arbeitsblatt.",
+      "obj": "dem Schüler"
+    },
+    {
+      "id": "d13",
+      "sentence": "Mia schreibt ihrer Freundin eine Nachricht.",
+      "obj": "ihrer Freundin"
+    },
+    {
+      "id": "d14",
+      "sentence": "Der Koch serviert den Gästen das Essen.",
+      "obj": "den Gästen"
+    },
+    {
+      "id": "d15",
+      "sentence": "Jonas übergibt seinem Trainer den Ball.",
+      "obj": "seinem Trainer"
+    }
+  ],
+  "both_objects": [
+    {
+      "id": "o01",
+      "sentence": "Mia schenkt ihrem Bruder ein spannendes Buch.",
+      "dative": "ihrem Bruder",
+      "accusative": "ein spannendes Buch"
+    },
+    {
+      "id": "o02",
+      "sentence": "Der Lehrer erklärt den Kindern die neue Regel.",
+      "dative": "den Kindern",
+      "accusative": "die neue Regel"
+    },
+    {
+      "id": "o03",
+      "sentence": "Der Verkäufer zeigt der Kundin einen roten Mantel.",
+      "dative": "der Kundin",
+      "accusative": "einen roten Mantel"
+    },
+    {
+      "id": "o04",
+      "sentence": "Paul leiht seinem Freund einen schwarzen Stift.",
+      "dative": "seinem Freund",
+      "accusative": "einen schwarzen Stift"
+    },
+    {
+      "id": "o05",
+      "sentence": "Die Mutter bringt den Kindern frische Erdbeeren.",
+      "dative": "den Kindern",
+      "accusative": "frische Erdbeeren"
+    },
+    {
+      "id": "o06",
+      "sentence": "Lena erzählt ihrer Schwester eine lustige Geschichte.",
+      "dative": "ihrer Schwester",
+      "accusative": "eine lustige Geschichte"
+    },
+    {
+      "id": "o07",
+      "sentence": "Der Trainer zeigt den Spielern die neue Übung.",
+      "dative": "den Spielern",
+      "accusative": "die neue Übung"
+    },
+    {
+      "id": "o08",
+      "sentence": "Die Kellnerin serviert den Gästen das warme Essen.",
+      "dative": "den Gästen",
+      "accusative": "das warme Essen"
+    },
+    {
+      "id": "o09",
+      "sentence": "Ben schreibt seiner Freundin eine kurze Nachricht.",
+      "dative": "seiner Freundin",
+      "accusative": "eine kurze Nachricht"
+    },
+    {
+      "id": "o10",
+      "sentence": "Der Vater kauft seinem Sohn einen neuen Fahrradhelm.",
+      "dative": "seinem Sohn",
+      "accusative": "einen neuen Fahrradhelm"
+    },
+    {
+      "id": "o11",
+      "sentence": "Mia zeigt ihrer Lehrerin das fertige Plakat.",
+      "dative": "ihrer Lehrerin",
+      "accusative": "das fertige Plakat"
+    },
+    {
+      "id": "o12",
+      "sentence": "Der Großvater erzählt den Kindern eine spannende Geschichte.",
+      "dative": "den Kindern",
+      "accusative": "eine spannende Geschichte"
+    }
+  ],
+  "adverbial": [
+    {
+      "id": "adv01",
+      "sentence": "Vor dem Unterricht erledigt Jonas seine Hausaufgaben.",
+      "target": "Vor dem Unterricht",
+      "role": "temporal"
+    },
+    {
+      "id": "adv02",
+      "sentence": "Vor dem Haupteingang wartet eine große Gruppe.",
+      "target": "Vor dem Haupteingang",
+      "role": "lokal"
+    },
+    {
+      "id": "adv03",
+      "sentence": "Vor großer Aufregung vergisst Mia ihren Text.",
+      "target": "Vor großer Aufregung",
+      "role": "kausal"
+    },
+    {
+      "id": "adv04",
+      "sentence": "Mit äußerster Sorgfalt trägt Ben das Modell.",
+      "target": "Mit äußerster Sorgfalt",
+      "role": "modal"
+    },
+    {
+      "id": "adv05",
+      "sentence": "Aus reiner Unsicherheit sagt Tom zunächst nichts.",
+      "target": "Aus reiner Unsicherheit",
+      "role": "kausal"
+    },
+    {
+      "id": "adv06",
+      "sentence": "Mit bemerkenswerter Geduld erklärt die Lehrerin die Aufgabe.",
+      "target": "Mit bemerkenswerter Geduld",
+      "role": "modal"
+    },
+    {
+      "id": "adv07",
+      "sentence": "Durch sorgfältiges Vergleichen entdeckt Mia den Fehler.",
+      "target": "Durch sorgfältiges Vergleichen",
+      "role": "modal"
+    },
+    {
+      "id": "adv08",
+      "sentence": "Durch seine Unaufmerksamkeit übersieht Ben einen wichtigen Hinweis.",
+      "target": "Durch seine Unaufmerksamkeit",
+      "role": "kausal"
+    },
+    {
+      "id": "adv09",
+      "sentence": "Nach dem Unterricht besucht Lena ihre Freundin.",
+      "target": "Nach dem Unterricht",
+      "role": "temporal"
+    },
+    {
+      "id": "adv10",
+      "sentence": "Nach Berlin fährt die Familie am Wochenende.",
+      "target": "Nach Berlin",
+      "role": "lokal"
+    },
+    {
+      "id": "adv11",
+      "sentence": "Wegen eines Missverständnisses beginnt die Besprechung später.",
+      "target": "Wegen eines Missverständnisses",
+      "role": "kausal"
+    },
+    {
+      "id": "adv12",
+      "sentence": "Ohne jede Unterstützung löst Paul die Aufgabe.",
+      "target": "Ohne jede Unterstützung",
+      "role": "modal"
+    },
+    {
+      "id": "adv13",
+      "sentence": "Unter der alten Brücke entdeckt Ben ein Fahrrad.",
+      "target": "Unter der alten Brücke",
+      "role": "lokal"
+    },
+    {
+      "id": "adv14",
+      "sentence": "Unter großem Zeitdruck beendet die Gruppe ihre Präsentation.",
+      "target": "Unter großem Zeitdruck",
+      "role": "modal"
+    },
+    {
+      "id": "adv15",
+      "sentence": "Seit dem letzten Schultag arbeitet Jonas an seinem Modell.",
+      "target": "Seit dem letzten Schultag",
+      "role": "temporal"
+    },
+    {
+      "id": "adv16",
+      "sentence": "Aufgrund einer beschädigten Leitung fällt der Unterricht aus.",
+      "target": "Aufgrund einer beschädigten Leitung",
+      "role": "kausal"
+    },
+    {
+      "id": "adv17",
+      "sentence": "Am frühen Morgen startet die Wandergruppe.",
+      "target": "Am frühen Morgen",
+      "role": "temporal"
+    },
+    {
+      "id": "adv18",
+      "sentence": "Im großen Innenhof wartet die Klasse.",
+      "target": "Im großen Innenhof",
+      "role": "lokal"
+    },
+    {
+      "id": "adv19",
+      "sentence": "Wegen der starken Hitze bleibt der Hund im Schatten.",
+      "target": "Wegen der starken Hitze",
+      "role": "kausal"
+    },
+    {
+      "id": "adv20",
+      "sentence": "Mit ruhigen Bewegungen öffnet Mia die Kiste.",
+      "target": "Mit ruhigen Bewegungen",
+      "role": "modal"
+    },
+    {
+      "id": "adv21",
+      "sentence": "Während der großen Pause besucht Ben die Bibliothek.",
+      "target": "Während der großen Pause",
+      "role": "temporal"
+    },
+    {
+      "id": "adv22",
+      "sentence": "Hinter dem alten Gebäude liegt ein kleiner Garten.",
+      "target": "Hinter dem alten Gebäude",
+      "role": "lokal"
+    },
+    {
+      "id": "adv23",
+      "sentence": "Aus großer Freude umarmt Lena ihre Schwester.",
+      "target": "Aus großer Freude",
+      "role": "kausal"
+    },
+    {
+      "id": "adv24",
+      "sentence": "Durch geschicktes Nachfragen findet Paul die Lösung.",
+      "target": "Durch geschicktes Nachfragen",
+      "role": "modal"
+    }
+  ],
+  "wordclass": [
+    {
+      "word": "trotz",
+      "class": "Präposition"
+    },
+    {
+      "word": "heftigen",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Regen",
+      "class": "Substantiv"
+    },
+    {
+      "word": "verlässt",
+      "class": "Verb"
+    },
+    {
+      "word": "erfahrene",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Wandergruppe",
+      "class": "Substantiv"
+    },
+    {
+      "word": "während",
+      "class": "Präposition"
+    },
+    {
+      "word": "anstrengenden",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Aufstiegs",
+      "class": "Substantiv"
+    },
+    {
+      "word": "tragen",
+      "class": "Verb"
+    },
+    {
+      "word": "durch",
+      "class": "Präposition"
+    },
+    {
+      "word": "schmalen",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "wegen",
+      "class": "Präposition"
+    },
+    {
+      "word": "umgestürzten",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Baumes",
+      "class": "Substantiv"
+    },
+    {
+      "word": "warten",
+      "class": "Verb"
+    },
+    {
+      "word": "unter",
+      "class": "Präposition"
+    },
+    {
+      "word": "großen",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Tisch",
+      "class": "Substantiv"
+    },
+    {
+      "word": "schläft",
+      "class": "Verb"
+    },
+    {
+      "word": "nach",
+      "class": "Präposition"
+    },
+    {
+      "word": "kurzen",
+      "class": "Adjektiv"
+    },
+    {
+      "word": "Pause",
+      "class": "Substantiv"
+    },
+    {
+      "word": "beginnt",
+      "class": "Verb"
+    }
+  ],
+  "error_analysis": [
+    {
+      "id": "e01",
+      "sentence": "Am Morgen bringt Lena ihrem Bruder einen Tee.",
+      "analysis": [
+        {
+          "text": "Am Morgen",
+          "shown": "lokal",
+          "correct": "temporal",
+          "wrong": true
+        },
+        {
+          "text": "bringt",
+          "shown": "Prädikat",
+          "wrong": false
+        },
+        {
+          "text": "Lena",
+          "shown": "Subjekt",
+          "wrong": false
+        },
+        {
+          "text": "ihrem Bruder",
+          "shown": "Dativobjekt",
+          "wrong": false
+        },
+        {
+          "text": "einen Tee",
+          "shown": "Akkusativobjekt",
+          "wrong": false
+        }
+      ]
+    },
+    {
+      "id": "e02",
+      "sentence": "Mit großer Vorsicht öffnet Paul die Tür.",
+      "analysis": [
+        {
+          "text": "Mit großer Vorsicht",
+          "shown": "kausal",
+          "correct": "modal",
+          "wrong": true
+        },
+        {
+          "text": "öffnet",
+          "shown": "Prädikat",
+          "wrong": false
+        },
+        {
+          "text": "Paul",
+          "shown": "Subjekt",
+          "wrong": false
+        },
+        {
+          "text": "die Tür",
+          "shown": "Akkusativobjekt",
+          "wrong": false
+        }
+      ]
+    },
+    {
+      "id": "e03",
+      "sentence": "Wegen des starken Regens bleibt die Klasse im Gebäude.",
+      "analysis": [
+        {
+          "text": "Wegen des starken Regens",
+          "shown": "temporal",
+          "correct": "kausal",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e04",
+      "sentence": "Im großen Garten spielt der Hund.",
+      "analysis": [
+        {
+          "text": "Im großen Garten",
+          "shown": "temporal",
+          "correct": "lokal",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e05",
+      "sentence": "Mia schenkt ihrem Bruder ein Buch.",
+      "analysis": [
+        {
+          "text": "ihrem Bruder",
+          "shown": "Akkusativobjekt",
+          "correct": "Dativobjekt",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e06",
+      "sentence": "Der Lehrer erklärt den Kindern die Aufgabe.",
+      "analysis": [
+        {
+          "text": "die Aufgabe",
+          "shown": "Dativobjekt",
+          "correct": "Akkusativobjekt",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e07",
+      "sentence": "Nach der Pause liest Lena einen Roman.",
+      "analysis": [
+        {
+          "text": "Nach der Pause",
+          "shown": "lokal",
+          "correct": "temporal",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e08",
+      "sentence": "Aus Angst versteckt sich der Hund unter dem Tisch.",
+      "analysis": [
+        {
+          "text": "Aus Angst",
+          "shown": "modal",
+          "correct": "kausal",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e09",
+      "sentence": "Der Hausmeister hat die Tür abgeschlossen.",
+      "analysis": [
+        {
+          "text": "hat",
+          "shown": "vollständiges Prädikat",
+          "correct": "hat … abgeschlossen",
+          "wrong": true
+        }
+      ]
+    },
+    {
+      "id": "e10",
+      "sentence": "Die beiden jungen Katzen schlafen auf dem Sofa.",
+      "analysis": [
+        {
+          "text": "Katzen",
+          "shown": "Subjekt",
+          "correct": "Die beiden jungen Katzen",
+          "wrong": true
+        }
+      ]
+    }
+  ],
+  "full_analysis": [
+    {
+      "id": "f01",
+      "sentence": "Am Montag bringt Lea ihrem Freund ein Geschenk in die Schule.",
+      "tokens": [
+        "Am",
+        "Montag",
+        "bringt",
+        "Lea",
+        "ihrem",
+        "Freund",
+        "ein",
+        "Geschenk",
+        "in",
+        "die",
+        "Schule"
+      ],
+      "constituents": [
+        {
+          "text": "Am Montag",
+          "start": 0,
+          "end": 1,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "bringt",
+          "start": 2,
+          "end": 2,
+          "role": "predicate"
+        },
+        {
+          "text": "Lea",
+          "start": 3,
+          "end": 3,
+          "role": "subject"
+        },
+        {
+          "text": "ihrem Freund",
+          "start": 4,
+          "end": 5,
+          "role": "object_dative"
+        },
+        {
+          "text": "ein Geschenk",
+          "start": 6,
+          "end": 7,
+          "role": "object_accusative"
+        },
+        {
+          "text": "in die Schule",
+          "start": 8,
+          "end": 10,
+          "role": "adverbial_lokal"
+        }
+      ],
+      "predicateParts": [
+        2
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f02",
+      "sentence": "Nach dem Unterricht zeigt Mia ihrem Bruder das neue Fahrrad.",
+      "tokens": [
+        "Nach",
+        "dem",
+        "Unterricht",
+        "zeigt",
+        "Mia",
+        "ihrem",
+        "Bruder",
+        "das",
+        "neue",
+        "Fahrrad"
+      ],
+      "constituents": [
+        {
+          "text": "Nach dem Unterricht",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "zeigt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "Mia",
+          "start": 4,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "ihrem Bruder",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "das neue Fahrrad",
+          "start": 7,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f03",
+      "sentence": "Mit großer Geduld erklärt der Lehrer den Kindern die schwierige Aufgabe.",
+      "tokens": [
+        "Mit",
+        "großer",
+        "Geduld",
+        "erklärt",
+        "der",
+        "Lehrer",
+        "den",
+        "Kindern",
+        "die",
+        "schwierige",
+        "Aufgabe"
+      ],
+      "constituents": [
+        {
+          "text": "Mit großer Geduld",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "erklärt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "der Lehrer",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "den Kindern",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "die schwierige Aufgabe",
+          "start": 8,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f04",
+      "sentence": "Wegen des starken Regens bringt die Mutter den Kindern ihre Jacken.",
+      "tokens": [
+        "Wegen",
+        "des",
+        "starken",
+        "Regens",
+        "bringt",
+        "die",
+        "Mutter",
+        "den",
+        "Kindern",
+        "ihre",
+        "Jacken"
+      ],
+      "constituents": [
+        {
+          "text": "Wegen des starken Regens",
+          "start": 0,
+          "end": 3,
+          "role": "adverbial_kausal"
+        },
+        {
+          "text": "bringt",
+          "start": 4,
+          "end": 4,
+          "role": "predicate"
+        },
+        {
+          "text": "die Mutter",
+          "start": 5,
+          "end": 6,
+          "role": "subject"
+        },
+        {
+          "text": "den Kindern",
+          "start": 7,
+          "end": 8,
+          "role": "object_dative"
+        },
+        {
+          "text": "ihre Jacken",
+          "start": 9,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        4
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f05",
+      "sentence": "Am frühen Morgen gibt der Tierpfleger den Affen frisches Obst.",
+      "tokens": [
+        "Am",
+        "frühen",
+        "Morgen",
+        "gibt",
+        "der",
+        "Tierpfleger",
+        "den",
+        "Affen",
+        "frisches",
+        "Obst"
+      ],
+      "constituents": [
+        {
+          "text": "Am frühen Morgen",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "gibt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "der Tierpfleger",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "den Affen",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "frisches Obst",
+          "start": 8,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f06",
+      "sentence": "Im Klassenraum zeigt Ben seiner Freundin stolz das fertige Modell.",
+      "tokens": [
+        "Im",
+        "Klassenraum",
+        "zeigt",
+        "Ben",
+        "seiner",
+        "Freundin",
+        "stolz",
+        "das",
+        "fertige",
+        "Modell"
+      ],
+      "constituents": [
+        {
+          "text": "Im Klassenraum",
+          "start": 0,
+          "end": 1,
+          "role": "adverbial_lokal"
+        },
+        {
+          "text": "zeigt",
+          "start": 2,
+          "end": 2,
+          "role": "predicate"
+        },
+        {
+          "text": "Ben",
+          "start": 3,
+          "end": 3,
+          "role": "subject"
+        },
+        {
+          "text": "seiner Freundin",
+          "start": 4,
+          "end": 5,
+          "role": "object_dative"
+        },
+        {
+          "text": "stolz",
+          "start": 6,
+          "end": 6,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "das fertige Modell",
+          "start": 7,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        2
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f07",
+      "sentence": "Aus großer Freude schenkt Lena ihrer Schwester eine selbst gebastelte Karte.",
+      "tokens": [
+        "Aus",
+        "großer",
+        "Freude",
+        "schenkt",
+        "Lena",
+        "ihrer",
+        "Schwester",
+        "eine",
+        "selbst",
+        "gebastelte",
+        "Karte"
+      ],
+      "constituents": [
+        {
+          "text": "Aus großer Freude",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_kausal"
+        },
+        {
+          "text": "schenkt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "Lena",
+          "start": 4,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "ihrer Schwester",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "eine selbst gebastelte Karte",
+          "start": 7,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f08",
+      "sentence": "Nach der Pause erklärt die Lehrerin den Schülern ruhig die nächste Aufgabe.",
+      "tokens": [
+        "Nach",
+        "der",
+        "Pause",
+        "erklärt",
+        "die",
+        "Lehrerin",
+        "den",
+        "Schülern",
+        "ruhig",
+        "die",
+        "nächste",
+        "Aufgabe"
+      ],
+      "constituents": [
+        {
+          "text": "Nach der Pause",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "erklärt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "die Lehrerin",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "den Schülern",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "ruhig",
+          "start": 8,
+          "end": 8,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "die nächste Aufgabe",
+          "start": 9,
+          "end": 11,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f09",
+      "sentence": "Im großen Garten bringt Paul seinem Kaninchen frisches Gemüse.",
+      "tokens": [
+        "Im",
+        "großen",
+        "Garten",
+        "bringt",
+        "Paul",
+        "seinem",
+        "Kaninchen",
+        "frisches",
+        "Gemüse"
+      ],
+      "constituents": [
+        {
+          "text": "Im großen Garten",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_lokal"
+        },
+        {
+          "text": "bringt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "Paul",
+          "start": 4,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "seinem Kaninchen",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "frisches Gemüse",
+          "start": 7,
+          "end": 8,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f10",
+      "sentence": "Wegen seines Geburtstags kauft die Mutter ihrem Sohn ein neues Spiel.",
+      "tokens": [
+        "Wegen",
+        "seines",
+        "Geburtstags",
+        "kauft",
+        "die",
+        "Mutter",
+        "ihrem",
+        "Sohn",
+        "ein",
+        "neues",
+        "Spiel"
+      ],
+      "constituents": [
+        {
+          "text": "Wegen seines Geburtstags",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_kausal"
+        },
+        {
+          "text": "kauft",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "die Mutter",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "ihrem Sohn",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "ein neues Spiel",
+          "start": 8,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f11",
+      "sentence": "Am Nachmittag hat Mia ihrer Freundin ein neues Foto gezeigt.",
+      "tokens": [
+        "Am",
+        "Nachmittag",
+        "hat",
+        "Mia",
+        "ihrer",
+        "Freundin",
+        "ein",
+        "neues",
+        "Foto",
+        "gezeigt"
+      ],
+      "constituents": [
+        {
+          "text": "Am Nachmittag",
+          "start": 0,
+          "end": 1,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "hat … gezeigt",
+          "start": 2,
+          "end": 9,
+          "role": "predicate",
+          "tokenIndexes": [
+            2,
+            9
+          ]
+        },
+        {
+          "text": "Mia",
+          "start": 3,
+          "end": 3,
+          "role": "subject"
+        },
+        {
+          "text": "ihrer Freundin",
+          "start": 4,
+          "end": 5,
+          "role": "object_dative"
+        },
+        {
+          "text": "ein neues Foto",
+          "start": 6,
+          "end": 8,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        2,
+        9
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f12",
+      "sentence": "Mit großer Sorgfalt hat der Schüler seiner Lehrerin das fertige Plakat übergeben.",
+      "tokens": [
+        "Mit",
+        "großer",
+        "Sorgfalt",
+        "hat",
+        "der",
+        "Schüler",
+        "seiner",
+        "Lehrerin",
+        "das",
+        "fertige",
+        "Plakat",
+        "übergeben"
+      ],
+      "constituents": [
+        {
+          "text": "Mit großer Sorgfalt",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "hat … übergeben",
+          "start": 3,
+          "end": 11,
+          "role": "predicate",
+          "tokenIndexes": [
+            3,
+            11
+          ]
+        },
+        {
+          "text": "der Schüler",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "seiner Lehrerin",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "das fertige Plakat",
+          "start": 8,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3,
+        11
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f13",
+      "sentence": "Nach dem Frühstück hat die Mutter den Kindern frisches Obst gebracht.",
+      "tokens": [
+        "Nach",
+        "dem",
+        "Frühstück",
+        "hat",
+        "die",
+        "Mutter",
+        "den",
+        "Kindern",
+        "frisches",
+        "Obst",
+        "gebracht"
+      ],
+      "constituents": [
+        {
+          "text": "Nach dem Frühstück",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "hat … gebracht",
+          "start": 3,
+          "end": 10,
+          "role": "predicate",
+          "tokenIndexes": [
+            3,
+            10
+          ]
+        },
+        {
+          "text": "die Mutter",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "den Kindern",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "frisches Obst",
+          "start": 8,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3,
+        10
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f14",
+      "sentence": "Im Musikraum spielt Lena am Nachmittag ein schwieriges Klavierstück.",
+      "tokens": [
+        "Im",
+        "Musikraum",
+        "spielt",
+        "Lena",
+        "am",
+        "Nachmittag",
+        "ein",
+        "schwieriges",
+        "Klavierstück"
+      ],
+      "constituents": [
+        {
+          "text": "Im Musikraum",
+          "start": 0,
+          "end": 1,
+          "role": "adverbial_lokal"
+        },
+        {
+          "text": "spielt",
+          "start": 2,
+          "end": 2,
+          "role": "predicate"
+        },
+        {
+          "text": "Lena",
+          "start": 3,
+          "end": 3,
+          "role": "subject"
+        },
+        {
+          "text": "am Nachmittag",
+          "start": 4,
+          "end": 5,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "ein schwieriges Klavierstück",
+          "start": 6,
+          "end": 8,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        2
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f15",
+      "sentence": "Wegen der großen Hitze trägt Paul heute besonders leichte Kleidung.",
+      "tokens": [
+        "Wegen",
+        "der",
+        "großen",
+        "Hitze",
+        "trägt",
+        "Paul",
+        "heute",
+        "besonders",
+        "leichte",
+        "Kleidung"
+      ],
+      "constituents": [
+        {
+          "text": "Wegen der großen Hitze",
+          "start": 0,
+          "end": 3,
+          "role": "adverbial_kausal"
+        },
+        {
+          "text": "trägt",
+          "start": 4,
+          "end": 4,
+          "role": "predicate"
+        },
+        {
+          "text": "Paul",
+          "start": 5,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "heute",
+          "start": 6,
+          "end": 6,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "besonders leichte Kleidung",
+          "start": 7,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        4
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f16",
+      "sentence": "Mit großer Vorsicht öffnet der Hausmeister am Morgen die schwere Tür.",
+      "tokens": [
+        "Mit",
+        "großer",
+        "Vorsicht",
+        "öffnet",
+        "der",
+        "Hausmeister",
+        "am",
+        "Morgen",
+        "die",
+        "schwere",
+        "Tür"
+      ],
+      "constituents": [
+        {
+          "text": "Mit großer Vorsicht",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "öffnet",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "der Hausmeister",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "am Morgen",
+          "start": 6,
+          "end": 7,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "die schwere Tür",
+          "start": 8,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f17",
+      "sentence": "Nach dem Training gibt der Trainer den Spielern neue Trinkflaschen.",
+      "tokens": [
+        "Nach",
+        "dem",
+        "Training",
+        "gibt",
+        "der",
+        "Trainer",
+        "den",
+        "Spielern",
+        "neue",
+        "Trinkflaschen"
+      ],
+      "constituents": [
+        {
+          "text": "Nach dem Training",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "gibt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "der Trainer",
+          "start": 4,
+          "end": 5,
+          "role": "subject"
+        },
+        {
+          "text": "den Spielern",
+          "start": 6,
+          "end": 7,
+          "role": "object_dative"
+        },
+        {
+          "text": "neue Trinkflaschen",
+          "start": 8,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f18",
+      "sentence": "In der Bibliothek erklärt Mia ihrem Freund leise die schwierige Aufgabe.",
+      "tokens": [
+        "In",
+        "der",
+        "Bibliothek",
+        "erklärt",
+        "Mia",
+        "ihrem",
+        "Freund",
+        "leise",
+        "die",
+        "schwierige",
+        "Aufgabe"
+      ],
+      "constituents": [
+        {
+          "text": "In der Bibliothek",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_lokal"
+        },
+        {
+          "text": "erklärt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "Mia",
+          "start": 4,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "ihrem Freund",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "leise",
+          "start": 7,
+          "end": 7,
+          "role": "adverbial_modal"
+        },
+        {
+          "text": "die schwierige Aufgabe",
+          "start": 8,
+          "end": 10,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 3,
+      "tags": []
+    },
+    {
+      "id": "f19",
+      "sentence": "Aus großer Dankbarkeit schreibt Ben seiner Lehrerin eine freundliche Nachricht.",
+      "tokens": [
+        "Aus",
+        "großer",
+        "Dankbarkeit",
+        "schreibt",
+        "Ben",
+        "seiner",
+        "Lehrerin",
+        "eine",
+        "freundliche",
+        "Nachricht"
+      ],
+      "constituents": [
+        {
+          "text": "Aus großer Dankbarkeit",
+          "start": 0,
+          "end": 2,
+          "role": "adverbial_kausal"
+        },
+        {
+          "text": "schreibt",
+          "start": 3,
+          "end": 3,
+          "role": "predicate"
+        },
+        {
+          "text": "Ben",
+          "start": 4,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "seiner Lehrerin",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "eine freundliche Nachricht",
+          "start": 7,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        3
+      ],
+      "difficulty": 2,
+      "tags": []
+    },
+    {
+      "id": "f20",
+      "sentence": "Am Abend hat der Großvater den Kindern eine spannende Geschichte erzählt.",
+      "tokens": [
+        "Am",
+        "Abend",
+        "hat",
+        "der",
+        "Großvater",
+        "den",
+        "Kindern",
+        "eine",
+        "spannende",
+        "Geschichte",
+        "erzählt"
+      ],
+      "constituents": [
+        {
+          "text": "Am Abend",
+          "start": 0,
+          "end": 1,
+          "role": "adverbial_temporal"
+        },
+        {
+          "text": "hat … erzählt",
+          "start": 2,
+          "end": 10,
+          "role": "predicate",
+          "tokenIndexes": [
+            2,
+            10
+          ]
+        },
+        {
+          "text": "der Großvater",
+          "start": 3,
+          "end": 4,
+          "role": "subject"
+        },
+        {
+          "text": "den Kindern",
+          "start": 5,
+          "end": 6,
+          "role": "object_dative"
+        },
+        {
+          "text": "eine spannende Geschichte",
+          "start": 7,
+          "end": 9,
+          "role": "object_accusative"
+        }
+      ],
+      "predicateParts": [
+        2,
+        10
+      ],
+      "difficulty": 3,
+      "tags": []
+    }
+  ]
+}
