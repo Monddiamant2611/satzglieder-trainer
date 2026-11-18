@@ -168,7 +168,6 @@ function BothObjectsTask({
 }) {
   const [phase, setPhase] = useState<'dat' | 'dat-done' | 'akk'>('dat')
   const [datOk, setDatOk] = useState(false)
-  const [akkOk, setAkkOk] = useState(false)
 
   if (phase === 'dat') {
     return (
@@ -209,13 +208,8 @@ function BothObjectsTask({
         prompt="Markiere das Akkusativobjekt (Wen oder was?)."
         explainCorrect={`Akkusativobjekt: ${data.accusative}`}
         explainWrong={`Lösung Akkusativ: ${data.accusative}`}
-        onResult={(ok) => {
-          setAkkOk(ok)
-          onResult(datOk && ok)
-        }}
+        onResult={(ok) => onResult(datOk && ok)}
       />
-      {/* akkOk kept for potential future summary */}
-      <span className="sr-only">{akkOk ? 'akk ok' : ''}</span>
     </>
   )
 }
