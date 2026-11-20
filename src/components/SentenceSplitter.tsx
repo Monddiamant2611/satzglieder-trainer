@@ -89,20 +89,9 @@ export function SentenceSplitter({
             {wi < wordCount - 1 ? (
               <button
                 type="button"
-                className="ghost-button"
-                style={{
-                  minWidth: 28,
-                  minHeight: 44,
-                  padding: '0 4px',
-                  fontWeight: 700,
-                  color: splitsAfter[wi] ? 'var(--accent-deep)' : 'var(--line-strong)',
-                  border: splitsAfter[wi]
-                    ? '2px solid var(--accent)'
-                    : '1px dashed var(--line-strong)',
-                  borderRadius: 8,
-                  background: splitsAfter[wi] ? 'var(--warn-bg)' : 'transparent',
-                }}
+                className={`boundary-gap ${splitsAfter[wi] ? 'boundary-gap--on' : ''}`}
                 aria-label={`Grenze nach „${tokens[ti]}“`}
+                aria-pressed={splitsAfter[wi]}
                 disabled={checked}
                 onClick={() => toggleSplit(wi)}
               >

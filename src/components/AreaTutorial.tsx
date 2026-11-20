@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import type { AreaTutorial as AreaTutorialData } from '../data/tutorials'
-import { VerbPositionCards } from './VerbPositionCards'
-import { VerbPositionPractice } from './VerbPositionPractice'
+import { TutorialExercise } from './TutorialExercise'
 
 type Props = {
   tutorial: AreaTutorialData
@@ -9,68 +8,120 @@ type Props = {
   onExit: () => void
 }
 
-const PHASE_LABEL: Record<string, string> = {
-  wissen: 'Phase 1 · Wissen auffrischen',
-  gemeinsam: 'Phase 2 · Gemeinsam ausprobieren',
-  selbst: 'Phase 3 · Selbstständig trainieren',
-}
-
 export function AreaTutorial({ tutorial, onFinished, onExit }: Props) {
-  const [phaseIndex, setPhaseIndex] = useState(0)
-  const phase = tutorial.phases[phaseIndex]
-  const last = phaseIndex >= tutorial.phases.length - 1
+  const steps = tutorial.steps
+  const [stepIndex, setStepIndex] = useState(0)
+  const [attempt, setAttempt] = useState(0)
+  const [passed, setPassed] = useState(false)
+  const [answeredWrong, setAnsweredWrong] = useState(false)
+
+  const step = steps[stepIndex]
+  const total = steps.length
+  const last = stepIndex >= total - 1
+  const progressPct = Math.round(((stepIndex + (passed ? 1 : 0)) / total) * 100)
+
+  const goTo = (i: number) => {
+    setStepIndex(i)
+    setAttempt((a) => a + 1)
+    setPassed(false)
+    setAnsweredWrong(false)
+  }
+
+  const replay = () => goTo(0)
+
+  if (!step) return null
 
   return (
-    <div className="content-knowledge">
+    <div className="content-knowledge tutorial-flow">
       <div className="exercise-top">
         <p className="eyebrow">Tutorial · {tutorial.title}</p>
         <button type="button" className="overview-link" onClick={onExit}>
           Schließen
         </button>
       </div>
+
+      <div className="tutorial-progress" aria-label="Fortschritt">
+        <div className="tutorial-progress-track">
+          <div className="tutorial-progress-fill" style={{ width: `${progressPct}%` }} />
+        </div>
+        <p className="muted-note tutorial-progress-label">
+          Schritt {stepIndex + 1} von {total}
+        </p>
+        <ol className="tutorial-dots" aria-hidden>
+          {steps.map((s, i) => (
+            <li
+              key={s.id}
+              className={
+                i < stepIndex ? 'done' : i === stepIndex ? (passed ? 'done' : 'current') : ''
+              }
+            />
+          ))}
+        </ol>
+      </div>
+
       <div className="learning-card learning-card--roomy" style={{ marginTop: 12 }}>
-        <p className="task-kicker">{PHASE_LABEL[phase.id]}</p>
-        <h1 style={{ fontSize: 'var(--fs-h2)', marginBottom: 8 }}>{phase.title}</h1>
-        <p className="intro-lead" style={{ marginBottom: 16 }}>
-          <strong>Lernziel:</strong> {tutorial.goal}
+        <p className="task-kicker">Schritt {stepIndex + 1}</p>
+        <h1 style={{ fontSize: 'var(--fs-h2)', marginBottom: 8 }}>{step.title}</h1>
+
+        <p className="intro-lead" style={{ marginBottom: 14 }}>
+          {step.explanation}
         </p>
 
-        {tutorial.showVerbPositions && phase.id === 'wissen' ? (
-          <section style={{ marginBottom: 16 }}>
-            <h3 style={{ marginBottom: 8 }}>Fachbegriffe · Verbstellung</h3>
-            <VerbPositionCards />
-          </section>
-        ) : null}
+        <div className="merke-card" style={{ marginBottom: 16 }}>
+          <p className="merke-label">Beispiel</p>
+          <p className="prompt-sentence" style={{ margin: '0.35rem 0' }}>
+            {step.example.sentence}
+          </p>
+          <p className="merke-text">{step.example.note}</p>
+        </div>
 
-        {phase.sections.map((s) => (
-          <section key={s.heading} style={{ marginBottom: 16 }}>
-            <h3 style={{ marginBottom: 6 }}>{s.heading}</h3>
-            <ul className="practice-hint-list">
-              {s.body.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        <div className="tutorial-exercise-block">
+          <TutorialExercise
+            exercise={step.exercise}
+            exerciseKey={`${step.id}-${attempt}`}
+            feedbackCorrect={step.feedbackCorrect}
+            feedbackWrong={step.feedbackWrong}
+            onResult={(ok) => {
+              if (ok) {
+                setPassed(true)
+                setAnsweredWrong(false)
+              } else {
+                setPassed(false)
+                setAnsweredWrong(true)
+              }
+            }}
+          />
+        </div>
 
-        {phase.example ? (
-          <div className="merke-card" style={{ marginTop: 8 }}>
-            <p className="merke-label">Beispiel</p>
-            <p className="prompt-sentence" style={{ margin: '0.35rem 0' }}>
-              {phase.example.sentence}
-            </p>
-            <p className="merke-text">{phase.example.note}</p>
-          </div>
-        ) : null}
-
-        {phase.verbPositionPractice ? <VerbPositionPractice /> : null}
-
-        <div className="intro-actions" style={{ marginTop: 20 }}>
-          {phaseIndex > 0 ? (
+        {answeredWrong && !passed ? (
+          <div className="intro-actions" style={{ marginTop: 12 }}>
             <button
               type="button"
               className="secondary-button"
-              onClick={() => setPhaseIndex((i) => i - 1)}
+              onClick={() => {
+                setAttempt((a) => a + 1)
+                setAnsweredWrong(false)
+              }}
+            >
+              Noch einmal versuchen
+            </button>
+          </div>
+        ) : null}
+
+        <div className="intro-actions tutorial-nav" style={{ marginTop: 20 }}>
+          <button
+            type="button"
+            className="ghost-button"
+            onClick={replay}
+            disabled={stepIndex === 0 && !passed && !answeredWrong}
+          >
+            Von vorn
+          </button>
+          {stepIndex > 0 ? (
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => goTo(stepIndex - 1)}
             >
               Zurück
             </button>
@@ -78,14 +129,21 @@ export function AreaTutorial({ tutorial, onFinished, onExit }: Props) {
           <button
             type="button"
             className="primary-button"
+            disabled={!passed}
             onClick={() => {
               if (last) onFinished()
-              else setPhaseIndex((i) => i + 1)
+              else goTo(stepIndex + 1)
             }}
           >
-            {last ? 'Tutorial abschließen & trainieren' : 'Weiter'}
+            {last ? 'Tutorial fertig · Training starten' : 'Weiter'}
           </button>
         </div>
+
+        {!passed ? (
+          <p className="muted-note" style={{ marginTop: 10 }}>
+            Löse die Mini-Übung, um den nächsten Schritt freizuschalten.
+          </p>
+        ) : null}
       </div>
     </div>
   )

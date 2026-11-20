@@ -35,7 +35,7 @@ export function RuleRefresh({ tutorial, onContinue, onOpenTutorial, onSkip }: Pr
             Überspringen
           </button>
           <button type="button" className="ghost-button" onClick={onOpenTutorial}>
-            Ganzes Tutorial öffnen
+            Tutorial noch einmal
           </button>
         </div>
       </div>

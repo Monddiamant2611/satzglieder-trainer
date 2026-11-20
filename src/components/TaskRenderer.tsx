@@ -26,6 +26,7 @@ import {
   type VerbPositionItem,
   type VerbPositionMoveItem,
 } from '../data/verbPosition'
+import type { FiniteVerbExercise } from '../data/finiteVerb'
 
 export type TaskItem =
   | { type: 'boundary'; data: BoundaryItem }
@@ -41,6 +42,7 @@ export type TaskItem =
   | { type: 'error_analysis'; data: ErrorAnalysisItem }
   | { type: 'verb_position'; data: VerbPositionItem }
   | { type: 'verb_position_move'; data: VerbPositionMoveItem }
+  | { type: 'finite_verb'; data: FiniteVerbExercise }
 
 type Props = {
   item: TaskItem
@@ -103,6 +105,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           onResult={onResult}
         />
       )
+    case 'finite_verb':
+      return <FiniteVerbTask data={item.data} onResult={onResult} />
     case 'subject':
       return (
         <MarkingTask
@@ -182,6 +186,50 @@ export function TaskRenderer({ item, onResult }: Props) {
     default:
       return null
   }
+}
+
+function FiniteVerbTask({
+  data,
+  onResult,
+}: {
+  data: FiniteVerbExercise
+  onResult: (ok: boolean) => void
+}) {
+  if (data.kind === 'choice') {
+    return (
+      <ClassificationTask
+        prompt={data.prompt}
+        sentence={data.sentence}
+        choices={data.choices}
+        correctId={data.correctId}
+        explainCorrect="Die Zuordnung zum finiten Verb bzw. zur Verbstellung stimmt."
+        explainWrong="Prüfe: Welche Form ist gebeugt? Wo steht das Finitum (Verberst-/Verbzweit-/Verbletztstellung)?"
+        onResult={onResult}
+      />
+    )
+  }
+  return (
+    <MarkingTask
+      sentence={data.sentence}
+      targetPhrases={data.targets}
+      prompt={data.prompt}
+      explainCorrect={
+        data.kind === 'mark_finite'
+          ? 'Das finite Verb ist richtig markiert.'
+          : data.kind === 'mark_verbs'
+            ? 'Alle Verbformen sind markiert.'
+            : 'Das Prädikat ist vollständig markiert.'
+      }
+      explainWrong={
+        data.kind === 'mark_finite'
+          ? 'Suche die gebeugte Verbform (Person/Tempus) – nicht das Partizip allein.'
+          : data.kind === 'mark_verbs'
+            ? 'Markiere Verbformen, keine Substantive oder Adjektive.'
+            : 'Finitum und mögliche weitere Teile (Partizip/Partikel) gehören zum Prädikat.'
+      }
+      onResult={onResult}
+    />
+  )
 }
 
 function BothObjectsTask({

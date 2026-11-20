@@ -6,6 +6,7 @@ import {
   VERB_POSITION_MOVE_POOL,
   VERB_POSITION_POOL,
 } from '../data/verbPosition'
+import { FINITE_VERB_EXERCISES } from '../data/finiteVerb'
 
 const data = pools as Pools
 
@@ -38,8 +39,17 @@ export function buildRound(areaId: AreaId): TaskItem[] {
       }))
       return shuffle([...moves, ...classify, ...moveLabel]).slice(0, ROUND_SIZE)
     }
-    case 'predicate':
-      return take(data.predicate, ROUND_SIZE).map((d) => ({ type: 'predicate', data: d }))
+    case 'predicate': {
+      const finite = take(FINITE_VERB_EXERCISES, 5).map((d) => ({
+        type: 'finite_verb' as const,
+        data: d,
+      }))
+      const preds = take(data.predicate, 3).map((d) => ({
+        type: 'predicate' as const,
+        data: d,
+      }))
+      return shuffle([...finite, ...preds]).slice(0, ROUND_SIZE)
+    }
     case 'subject':
       return take(data.subject, ROUND_SIZE).map((d) => ({ type: 'subject', data: d }))
     case 'accusative':
@@ -106,6 +116,8 @@ export function taskLabel(item: TaskItem): string {
       return 'Umsstellung + Verbstellung'
     case 'predicate':
       return 'Prädikat'
+    case 'finite_verb':
+      return 'Das finite Verb'
     case 'subject':
       return 'Subjekt'
     case 'accusative':

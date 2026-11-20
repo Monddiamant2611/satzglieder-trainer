@@ -45,7 +45,7 @@ export const TRAIN_AREAS: AreaConfig[] = [
     id: 'predicate',
     number: 3,
     title: 'Prädikat',
-    blurb: 'Markiere das Prädikat – auch mehrteilig.',
+    blurb: 'Finites Verb erkennen – ein- und mehrteilige Prädikate.',
     poolKey: 'predicate',
     competency: 'predicate',
     accent: 'orange',
