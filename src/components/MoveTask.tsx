@@ -44,7 +44,7 @@ function buildSentence(parts: string[]): string {
 type ChipProps = {
   id: number
   label: string
-  isVerb: boolean
+  locked: boolean
   disabled: boolean
   selected: boolean
   showInsertBefore: boolean
@@ -54,7 +54,7 @@ type ChipProps = {
 function SortableChip({
   id,
   label,
-  isVerb,
+  locked,
   disabled,
   selected,
   showInsertBefore,
@@ -62,7 +62,7 @@ function SortableChip({
 }: ChipProps) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id,
-    disabled: disabled || isVerb,
+    disabled: disabled || locked,
   })
 
   const style: React.CSSProperties = {
@@ -81,14 +81,14 @@ function SortableChip({
         className={[
           'sort-card',
           'dnd-chip',
-          isVerb ? 'paired dnd-chip--verb' : 'dnd-chip--movable',
+          locked ? 'dnd-chip--locked' : 'dnd-chip--movable',
           selected ? 'active' : '',
           isDragging ? 'dnd-chip--dragging' : '',
         ]
           .filter(Boolean)
           .join(' ')}
       >
-        {!isVerb && !disabled ? (
+        {!locked && !disabled ? (
           <button
             type="button"
             className="dnd-handle"
@@ -100,20 +100,19 @@ function SortableChip({
           </button>
         ) : (
           <span className="dnd-handle dnd-handle--locked" aria-hidden>
-            🔒
+            ·
           </span>
         )}
         <button
           type="button"
           className="dnd-chip-label"
           onClick={onSelect}
-          disabled={disabled || isVerb}
+          disabled={disabled || locked}
           aria-pressed={selected}
         >
           {label}
         </button>
       </div>
-      {isVerb ? <span className="dnd-verb-tag">Verb · Pos. 2</span> : null}
     </li>
   )
 }
@@ -148,8 +147,7 @@ export function MoveTask({
   const [blockHint, setBlockHint] = useState<string | null>(null)
 
   const verbSet = useMemo(() => new Set(verbIndexes), [verbIndexes])
-  const currentGroups = order.map((i) => groups[i])
-  const sentence = buildSentence(currentGroups)
+  const sentence = buildSentence(order.map((i) => groups[i]))
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -161,7 +159,7 @@ export function MoveTask({
     if (checked) return
     const groupId = order[orderIndex]
     if (verbSet.has(groupId)) {
-      setBlockHint('Das finite Verb bleibt an Position 2 und kann nicht nach vorn.')
+      setBlockHint('Dieses Satzglied bleibt an Position 2.')
       return
     }
     const without = order.filter((_, i) => i !== orderIndex)
@@ -177,7 +175,7 @@ export function MoveTask({
     const groupId = order[orderIndex]
     if (verbSet.has(groupId)) {
       setPicked(null)
-      setBlockHint('Das finite Verb bleibt an Position 2.')
+      setBlockHint('Dieses Satzglied bleibt an Position 2.')
       return
     }
     setBlockHint(null)
@@ -188,7 +186,7 @@ export function MoveTask({
     if (checked) return
     const id = Number(event.active.id)
     if (isVerbGroup(id, verbIndexes)) {
-      setBlockHint('Das finite Verb bleibt an Position 2 und lässt sich nicht verschieben.')
+      setBlockHint('Dieses Satzglied bleibt an Position 2.')
       setActiveId(null)
       return
     }
@@ -210,16 +208,11 @@ export function MoveTask({
     const a = Number(active.id)
     const o = Number(over.id)
     if (isVerbGroup(a, verbIndexes)) {
-      setBlockHint('Das finite Verb bleibt an Position 2 und lässt sich nicht verschieben.')
+      setBlockHint('Dieses Satzglied bleibt an Position 2.')
       return
     }
     if (a === o) return
     setOrder((prev) => reorderNonVerbs(prev, verbIndexes, a, o))
-  }
-
-  const onDragCancel = () => {
-    setActiveId(null)
-    setOverId(null)
   }
 
   const check = () => {
@@ -227,7 +220,9 @@ export function MoveTask({
       ...validSentences,
       ...(acceptOriginal && originalSentence ? [originalSentence] : []),
     ]
-    const match = candidates.some((v) => sentencesEqual(v, buildSentence(order.map((i) => groups[i]))))
+    const match = candidates.some((v) =>
+      sentencesEqual(v, buildSentence(order.map((i) => groups[i]))),
+    )
     setOk(match)
     setChecked(true)
     onResult(match)
@@ -249,9 +244,8 @@ export function MoveTask({
     <div className="chunk-order">
       <p className="instruction-note">{prompt}</p>
       <p className="muted-note">
-        Ziehe Satzglieder an die gewünschte Stelle (Maus oder Finger). Das finite Verb bleibt an
-        Position 2. Alternativ: auswählen und „An den Anfang“, oder Tastatur (Tab + Leertaste /
-        Pfeiltasten).
+        Ziehe Satzglieder (Maus oder Finger). Alternativ auswählen und „An den Anfang“, oder
+        Tastatur (Tab + Leertaste / Pfeiltasten).
       </p>
 
       <div className="order-label">Aktueller Satz</div>
@@ -261,7 +255,10 @@ export function MoveTask({
         onDragStart={onDragStart}
         onDragOver={onDragOver}
         onDragEnd={onDragEnd}
-        onDragCancel={onDragCancel}
+        onDragCancel={() => {
+          setActiveId(null)
+          setOverId(null)
+        }}
       >
         <SortableContext items={order} strategy={horizontalListSortingStrategy}>
           <div className="sentence-row order-sentence dnd-sentence">
@@ -271,7 +268,7 @@ export function MoveTask({
                   key={`${groupId}-${groups[groupId]}`}
                   id={groupId}
                   label={groups[groupId]}
-                  isVerb={verbSet.has(groupId)}
+                  locked={verbSet.has(groupId)}
                   disabled={checked}
                   selected={picked === i}
                   showInsertBefore={
@@ -333,11 +330,6 @@ export function MoveTask({
           title={ok ? 'Gute Umsstellung!' : soft ? 'Probiere weiter' : 'So nicht'}
         >
           {ok ? explainCorrect : explainWrong}
-          {!ok ? (
-            <p className="muted-note" style={{ marginTop: 8 }}>
-              Möglich z. B.: {validSentences[0]}
-            </p>
-          ) : null}
         </FeedbackPanel>
       ) : null}
     </div>

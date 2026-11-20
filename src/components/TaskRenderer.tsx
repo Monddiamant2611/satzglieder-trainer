@@ -73,8 +73,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={item.data.parts}
           prompt="Markiere alle Teile des Prädikats."
-          explainCorrect={`Prädikat: ${item.data.parts.join(' … ')}`}
-          explainWrong="Denk an mehrteilige Formen (hat … gemacht) und Partikelverben (räumt … auf)."
+          explainCorrect="Alle Teile des Prädikats sind markiert."
+          explainWrong="Denk an mehrteilige Formen und Partikelverben – markiere alle Teile."
           onResult={onResult}
         />
       )
@@ -84,8 +84,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.subject]}
           prompt="Markiere das Subjekt (Wer oder was?)."
-          explainCorrect={`Subjekt: ${item.data.subject}`}
-          explainWrong={`Frage: Wer oder was + „${item.data.predicate}“? Markiere die ganze Gruppe.`}
+          explainCorrect="Das Subjekt ist richtig markiert."
+          explainWrong="Frage: Wer oder was + Prädikat? Markiere die ganze Gruppe."
           onResult={onResult}
         />
       )
@@ -95,7 +95,7 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.obj]}
           prompt="Markiere das Akkusativobjekt (Wen oder was?)."
-          explainCorrect={`Akkusativobjekt: ${item.data.obj}`}
+          explainCorrect="Das Akkusativobjekt ist richtig markiert."
           explainWrong="Stelle die Frage: Wen oder was? – und markiere die ganze Nominalgruppe."
           onResult={onResult}
         />
@@ -106,7 +106,7 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.obj]}
           prompt="Markiere das Dativobjekt (Wem?)."
-          explainCorrect={`Dativobjekt: ${item.data.obj}`}
+          explainCorrect="Das Dativobjekt ist richtig markiert."
           explainWrong="Stelle die Frage: Wem? – und markiere die ganze Nominalgruppe."
           onResult={onResult}
         />
@@ -123,7 +123,7 @@ export function TaskRenderer({ item, onResult }: Props) {
             ['temporal', 'lokal', 'kausal', 'modal'] as const
           ).map((id) => ({ id, label: ADVERBIAL_LABELS[id] }))}
           correctId={item.data.role}
-          explainCorrect={`„${item.data.target}“ ist ${ADVERBIAL_LABELS[item.data.role]}.`}
+          explainCorrect="Die Zuordnung stimmt."
           explainWrong="Orientiere dich an der Funktion: Wann? Wo? Warum? Wie?"
           onResult={onResult}
         />
@@ -147,8 +147,8 @@ export function TaskRenderer({ item, onResult }: Props) {
             label: c,
           }))}
           correctId={item.data.class}
-          explainCorrect={`„${item.data.word}“ ist ein ${item.data.class}.`}
-          explainWrong={`Die Lösung ist: ${item.data.class}.`}
+          explainCorrect="Die Wortart stimmt."
+          explainWrong="Prüfe Beugung und Funktion des Wortes noch einmal."
           onResult={onResult}
         />
       )
@@ -176,8 +176,8 @@ function BothObjectsTask({
         sentence={data.sentence}
         targetPhrases={[data.dative]}
         prompt="Zuerst: Markiere das Dativobjekt (Wem?)."
-        explainCorrect={`Dativobjekt: ${data.dative}`}
-        explainWrong={`Lösung Dativ: ${data.dative}`}
+        explainCorrect="Dativobjekt richtig markiert."
+        explainWrong="Frage: Wem? – ganze Gruppe markieren."
         onResult={(ok) => {
           setDatOk(ok)
           setPhase('dat-done')
@@ -199,15 +199,15 @@ function BothObjectsTask({
   return (
     <>
       <p className="muted-note">
-        Dativ war {datOk ? 'richtig' : 'nicht ganz'} · jetzt Akkusativ
+        Dativ war {datOk ? 'richtig' : 'noch nicht'} · jetzt Akkusativ
       </p>
       <MarkingTask
         key="akk"
         sentence={data.sentence}
         targetPhrases={[data.accusative]}
         prompt="Markiere das Akkusativobjekt (Wen oder was?)."
-        explainCorrect={`Akkusativobjekt: ${data.accusative}`}
-        explainWrong={`Lösung Akkusativ: ${data.accusative}`}
+        explainCorrect="Akkusativobjekt richtig markiert."
+        explainWrong="Frage: Wen oder was? – ganze Gruppe markieren."
         onResult={(ok) => onResult(datOk && ok)}
       />
     </>
@@ -241,9 +241,7 @@ function ErrorFindTask({
           <button
             key={`${a.text}-${i}`}
             type="button"
-            className={`choice-option ${picked.includes(i) ? 'selected' : ''} ${
-              checked && a.wrong ? 'solution' : ''
-            } ${checked && !ok && picked.includes(i) && !a.wrong ? 'mismatch' : ''}`}
+            className={`choice-option ${picked.includes(i) ? 'selected' : ''}`}
             disabled={checked}
             onClick={() =>
               setPicked((prev) =>
@@ -254,12 +252,6 @@ function ErrorFindTask({
             <span className="choice-check" />
             <span>
               <strong>{a.text}</strong> → {a.shown}
-              {checked && a.wrong ? (
-                <span className="muted-note">
-                  {' '}
-                  (richtig: {a.correct ?? '?'})
-                </span>
-              ) : null}
             </span>
           </button>
         ))}
@@ -286,7 +278,7 @@ function ErrorFindTask({
         <FeedbackPanel variant={ok ? 'correct' : 'wrong'} title={ok ? 'Fehler gefunden!' : 'Nicht alle'}>
           {ok
             ? 'Du hast die falschen Zuordnungen erkannt.'
-            : 'Vergleiche die markierten Stellen mit der Lösung.'}
+            : 'Prüfe jede Zuordnung erneut mit der passenden Frage.'}
         </FeedbackPanel>
       ) : null}
     </div>

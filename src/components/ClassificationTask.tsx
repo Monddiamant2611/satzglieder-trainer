@@ -69,9 +69,7 @@ export function ClassificationTask({
           <button
             key={c.id}
             type="button"
-            className={`choice-option ${picked === c.id ? 'selected' : ''} ${
-              checked && c.id === correctId ? 'solution' : ''
-            }`}
+            className={`choice-option ${picked === c.id ? 'selected' : ''}`}
             onClick={() => !checked && setPicked(c.id)}
             disabled={checked}
           >

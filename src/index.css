@@ -155,3 +155,11 @@
     max-width: 100%;
   }
 }
+
+.dnd-chip--locked {
+  cursor: default;
+  touch-action: manipulation;
+}
+.dnd-chip--locked .dnd-chip-label {
+  cursor: default;
+}

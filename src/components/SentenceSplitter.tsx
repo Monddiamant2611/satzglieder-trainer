@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { tokenize, isPunctuation, normalize, wordsOnly } from '../lib/tokenize'
+import { tokenize, isPunctuation, normalize } from '../lib/tokenize'
 import { FeedbackPanel } from './FeedbackPanel'
 
 type Props = {
@@ -38,17 +38,6 @@ export function SentenceSplitter({
   )
   const [checked, setChecked] = useState(false)
   const [ok, setOk] = useState(false)
-
-  const solutionSplits = useMemo(() => {
-    const flags = Array.from({ length: Math.max(0, wordCount - 1) }, () => false)
-    let cursor = 0
-    for (let g = 0; g < groups.length - 1; g++) {
-      const len = wordsOnly(tokenize(groups[g])).length
-      cursor += len
-      if (cursor - 1 < flags.length) flags[cursor - 1] = true
-    }
-    return flags
-  }, [groups, wordCount])
 
   const toggleSplit = (afterWord: number) => {
     if (checked) return
@@ -106,9 +95,7 @@ export function SentenceSplitter({
                   minHeight: 44,
                   padding: '0 4px',
                   fontWeight: 700,
-                  color: splitsAfter[wi] || (checked && solutionSplits[wi])
-                    ? 'var(--accent-deep)'
-                    : 'var(--line-strong)',
+                  color: splitsAfter[wi] ? 'var(--accent-deep)' : 'var(--line-strong)',
                   border: splitsAfter[wi]
                     ? '2px solid var(--accent)'
                     : '1px dashed var(--line-strong)',
@@ -151,11 +138,6 @@ export function SentenceSplitter({
           title={ok ? 'Grenzen stimmen!' : soft ? 'Schau die Gruppen an' : 'Andere Grenzen'}
         >
           {ok ? explainCorrect : explainWrong}
-          {!ok ? (
-            <p className="muted-note" style={{ marginTop: 8 }}>
-              Lösung: {groups.join(' | ')}
-            </p>
-          ) : null}
         </FeedbackPanel>
       ) : null}
     </div>

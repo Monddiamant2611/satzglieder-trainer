@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import type { RoleId } from '../data/roles'
-import { ROLE_META } from '../data/roles'
 import { FeedbackPanel } from './FeedbackPanel'
 import { WordToken } from './WordToken'
 
@@ -71,16 +70,6 @@ export function FullAnalysisTask({
   const [stepOk, setStepOk] = useState<(boolean | null)[]>(() => STEPS.map(() => null))
   const [finished, setFinished] = useState(false)
 
-  const roleByToken = useMemo(() => {
-    const map = new Map<number, RoleId>()
-    for (const c of constituents) {
-      for (const i of indexesForConstituent(c)) map.set(i, c.role)
-    }
-    // ensure predicate parts tagged
-    for (const i of predicateParts) map.set(i, 'predicate')
-    return map
-  }, [constituents, predicateParts])
-
   const current = STEPS[step]
   const targetIndexes = useMemo(() => {
     const set = new Set<number>()
@@ -103,7 +92,6 @@ export function FullAnalysisTask({
   const checkStep = () => {
     const a = new Set(selected)
     const b = new Set(targetIndexes)
-    // empty targets (e.g. no objects) → ok if nothing selected
     const match = a.size === b.size && [...a].every((x) => b.has(x))
     const next = [...stepOk]
     next[step] = match
@@ -122,33 +110,21 @@ export function FullAnalysisTask({
   }
 
   if (finished) {
+    const allOk = stepOk.every((v) => v === true)
     return (
       <div className="analysis-steps">
         <FeedbackPanel
-          variant={stepOk.every((v) => v) ? 'correct' : 'wrong'}
-          title={stepOk.every((v) => v) ? 'Analyse vollständig!' : 'Lösung ansehen'}
+          variant={allOk ? 'correct' : 'wrong'}
+          title={allOk ? 'Analyse vollständig!' : 'Analyse beendet'}
         >
-          Hier ist die vollständige Lösung zum Vergleich.
+          {allOk
+            ? 'Alle Schritte waren richtig.'
+            : 'Mindestens ein Schritt stimmte nicht – übe die Reihenfolge: Prädikat → Subjekt → Objekte → Adverbiale.'}
         </FeedbackPanel>
-        <div className="token-sentence" style={{ marginTop: 12 }}>
-          {tokens.map((t, i) => {
-            const role = roleByToken.get(i)
-            const meta = role ? ROLE_META[role] : null
-            return (
-              <WordToken
-                key={i}
-                text={t}
-                as="span"
-                roleStyle={meta ? { bg: meta.bg, deep: meta.deep } : null}
-              />
-            )
-          })}
-        </div>
-        <ul className="inventory-list" style={{ marginTop: 12 }}>
-          {constituents.map((c) => (
-            <li key={`${c.role}-${c.text}`}>
-              <span>{c.text}</span>
-              <strong>{ROLE_META[c.role]?.label ?? c.role}</strong>
+        <ul className="practice-hint-list" style={{ marginTop: 12 }}>
+          {STEPS.map((s, i) => (
+            <li key={s.key}>
+              {s.title}: {stepOk[i] ? 'richtig' : 'noch üben'}
             </li>
           ))}
         </ul>
@@ -172,8 +148,6 @@ export function FullAnalysisTask({
             key={i}
             text={t}
             selected={selected.includes(i)}
-            solution={checked && targetIndexes.includes(i)}
-            wrong={checked && !ok && selected.includes(i) && !targetIndexes.includes(i)}
             disabled={checked}
             onClick={() => toggle(i)}
           />
@@ -201,12 +175,10 @@ export function FullAnalysisTask({
         ) : null}
       </div>
       {checked ? (
-        <FeedbackPanel variant={ok ? 'correct' : 'wrong'} title={ok ? 'Stimmt!' : 'Schau die Lösung'}>
+        <FeedbackPanel variant={ok ? 'correct' : 'wrong'} title={ok ? 'Stimmt!' : 'Noch nicht'}>
           {ok
             ? 'Weiter zum nächsten Schritt.'
-            : `Erwartet: ${
-                targetIndexes.map((i) => tokens[i]).join(' ') || 'nichts markieren'
-              }`}
+            : 'Prüfe die Frage dieses Schritts noch einmal und markiere die ganze Gruppe.'}
         </FeedbackPanel>
       ) : null}
     </div>

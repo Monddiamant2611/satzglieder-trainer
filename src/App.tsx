@@ -19,7 +19,7 @@ type View =
   | { name: 'foundations' }
   | { name: 'train' }
   | { name: 'progress' }
-  | { name: 'session'; areaId: AreaId }
+  | { name: 'session'; areaId: AreaId; forceTutorial?: boolean }
   | {
       name: 'completion'
       areaId: AreaId
@@ -41,6 +41,11 @@ export default function App() {
   const goHome = () => {
     setMenuOpen(false)
     setView({ name: 'home' })
+  }
+
+  const startArea = (id: AreaId, opts?: { forceTutorial?: boolean }) => {
+    setSessionKey((k) => k + 1)
+    setView({ name: 'session', areaId: id, forceTutorial: opts?.forceTutorial })
   }
 
   const navButton = (
@@ -111,10 +116,7 @@ export default function App() {
             onStartFoundations={() => setView({ name: 'foundations' })}
             onOpenTrain={() => setView({ name: 'train' })}
             onOpenProgress={() => setView({ name: 'progress' })}
-            onStartArea={(id) => {
-              setSessionKey((k) => k + 1)
-              setView({ name: 'session', areaId: id })
-            }}
+            onStartArea={(id) => startArea(id)}
           />
         ) : null}
 
@@ -134,14 +136,7 @@ export default function App() {
         ) : null}
 
         {view.name === 'train' ? (
-          <TrainPathPage
-            progress={progress}
-            onBack={goHome}
-            onStart={(id) => {
-              setSessionKey((k) => k + 1)
-              setView({ name: 'session', areaId: id })
-            }}
-          />
+          <TrainPathPage progress={progress} onBack={goHome} onStart={startArea} />
         ) : null}
 
         {view.name === 'progress' ? (
@@ -152,6 +147,9 @@ export default function App() {
           <SessionPage
             key={sessionKey}
             areaId={view.areaId}
+            progress={progress}
+            forceTutorial={view.forceTutorial}
+            onProgress={setProgress}
             onAbort={() => setView({ name: 'train' })}
             onComplete={(correct, total, byType) => {
               setProgress(recordAreaResult(view.areaId, correct, total))
@@ -172,10 +170,7 @@ export default function App() {
             correct={view.correct}
             total={view.total}
             byType={view.byType}
-            onAgain={() => {
-              setSessionKey((k) => k + 1)
-              setView({ name: 'session', areaId: view.areaId })
-            }}
+            onAgain={() => startArea(view.areaId)}
             onTrainPath={() => setView({ name: 'train' })}
             onHome={goHome}
           />

@@ -1,13 +1,11 @@
 import { useMemo, useState } from 'react'
-import { findPhraseSpan, tokenize, isPunctuation, wordsOnly } from '../lib/tokenize'
+import { findPhraseSpan } from '../lib/tokenize'
 import { SentenceDisplay } from './SentenceDisplay'
 import { FeedbackPanel } from './FeedbackPanel'
 
 type Props = {
   sentence: string
-  /** Phrases that must be marked (all tokens of each). */
   targetPhrases: string[]
-  /** Optional: exact token indexes (overrides phrases). */
   targetIndexes?: number[]
   prompt: string
   soft?: boolean
@@ -59,16 +57,12 @@ export function MarkingTask({
     onResult(match)
   }
 
-  const wrong = checked && !ok ? selected.filter((i) => !targets.includes(i)) : []
-
   return (
     <div className="token-mark">
       <p className="instruction-note">{prompt}</p>
       <SentenceDisplay
         sentence={sentence}
         selectedIndexes={selected}
-        solutionIndexes={checked ? targets : []}
-        wrongIndexes={wrong}
         interactive
         onToggle={toggle}
         disabled={checked}
@@ -76,7 +70,12 @@ export function MarkingTask({
       <div className="exercise-actions">
         {!checked ? (
           <>
-            <button type="button" className="primary-button" onClick={check} disabled={!selected.length}>
+            <button
+              type="button"
+              className="primary-button"
+              onClick={check}
+              disabled={!selected.length}
+            >
               Prüfen
             </button>
             <button
@@ -95,20 +94,6 @@ export function MarkingTask({
           title={ok ? 'Stimmt!' : soft ? 'Noch nicht' : 'Nicht ganz'}
         >
           {ok ? explainCorrect : explainWrong}
-          {!ok ? (
-            <p className="muted-note" style={{ marginTop: 8 }}>
-              Lösung:{' '}
-              {wordsOnly(tokenize(sentence))
-                .filter((_, wi) => {
-                  const tokens = tokenize(sentence)
-                  const wordIndexes = tokens
-                    .map((t, i) => (!isPunctuation(t) ? i : -1))
-                    .filter((i) => i >= 0)
-                  return targets.includes(wordIndexes[wi])
-                })
-                .join(' ') || targetPhrases.join(' · ')}
-            </p>
-          ) : null}
         </FeedbackPanel>
       ) : null}
     </div>

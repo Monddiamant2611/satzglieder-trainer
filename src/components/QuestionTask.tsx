@@ -56,9 +56,7 @@ export function QuestionTask({
             />
             {checked ? (
               <span className="muted-note">
-                {normalize(answers[i]) === normalize(it.answer)
-                  ? '✓'
-                  : `Lösung: ${it.answer}`}
+                {normalize(answers[i]) === normalize(it.answer) ? 'richtig' : 'noch nicht'}
               </span>
             ) : null}
           </label>

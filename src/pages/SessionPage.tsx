@@ -1,11 +1,24 @@
 import { useMemo, useRef, useState } from 'react'
 import { TRAIN_AREAS, type AreaId } from '../data/areas'
+import { getTutorial } from '../data/tutorials'
 import { TaskRenderer } from '../components/TaskRenderer'
 import { TrainerProgress } from '../components/TrainerProgress'
+import { AreaTutorial } from '../components/AreaTutorial'
+import { RuleRefresh } from '../components/RuleRefresh'
 import { buildRound, taskLabel } from '../lib/session'
+import {
+  bumpRoundStarted,
+  isTutorialComplete,
+  markTutorialComplete,
+  roundsStartedCount,
+  type ProgressState,
+} from '../lib/progress'
 
 type Props = {
   areaId: AreaId
+  progress: ProgressState
+  forceTutorial?: boolean
+  onProgress: (p: ProgressState) => void
   onComplete: (
     correct: number,
     total: number,
@@ -14,12 +27,61 @@ type Props = {
   onAbort: () => void
 }
 
-export function SessionPage({ areaId, onComplete, onAbort }: Props) {
+type Phase = 'tutorial' | 'refresh' | 'train'
+
+export function SessionPage({
+  areaId,
+  progress,
+  forceTutorial,
+  onProgress,
+  onComplete,
+  onAbort,
+}: Props) {
   const area = TRAIN_AREAS.find((a) => a.id === areaId)!
+  const tutorial = getTutorial(areaId)
+  const tutDone = isTutorialComplete(progress, areaId)
+  const priorRounds = roundsStartedCount(progress, areaId)
+
+  const initialPhase: Phase = forceTutorial || !tutDone ? 'tutorial' : priorRounds > 0 ? 'refresh' : 'train'
+
+  const [phase, setPhase] = useState<Phase>(initialPhase)
   const items = useMemo(() => buildRound(areaId), [areaId])
   const [index, setIndex] = useState(0)
   const resultsRef = useRef<{ ok: boolean; type: string }[]>([])
   const [awaitingNext, setAwaitingNext] = useState(false)
+  const roundCounted = useRef(false)
+
+  const startTrain = () => {
+    if (!roundCounted.current) {
+      onProgress(bumpRoundStarted(areaId))
+      roundCounted.current = true
+    }
+    setPhase('train')
+  }
+
+  if (phase === 'tutorial') {
+    return (
+      <AreaTutorial
+        tutorial={tutorial}
+        onExit={onAbort}
+        onFinished={() => {
+          onProgress(markTutorialComplete(areaId))
+          startTrain()
+        }}
+      />
+    )
+  }
+
+  if (phase === 'refresh') {
+    return (
+      <RuleRefresh
+        tutorial={tutorial}
+        onContinue={startTrain}
+        onSkip={startTrain}
+        onOpenTutorial={() => setPhase('tutorial')}
+      />
+    )
+  }
 
   const item = items[index]
 
@@ -60,9 +122,14 @@ export function SessionPage({ areaId, onComplete, onAbort }: Props) {
           <p className="eyebrow">
             {area.number}. {area.title}
           </p>
-          <button type="button" className="overview-link" onClick={onAbort}>
-            Runde beenden
-          </button>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+            <button type="button" className="overview-link" onClick={() => setPhase('tutorial')}>
+              Tutorial
+            </button>
+            <button type="button" className="overview-link" onClick={onAbort}>
+              Runde beenden
+            </button>
+          </div>
         </div>
         <TrainerProgress
           current={index}
