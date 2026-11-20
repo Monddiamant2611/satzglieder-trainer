@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import type { AreaTutorial } from '../data/tutorials'
+import type { AreaTutorial as AreaTutorialData } from '../data/tutorials'
+import { VerbPositionCards } from './VerbPositionCards'
+import { VerbPositionPractice } from './VerbPositionPractice'
 
 type Props = {
-  tutorial: AreaTutorial
+  tutorial: AreaTutorialData
   onFinished: () => void
   onExit: () => void
 }
@@ -33,6 +35,13 @@ export function AreaTutorial({ tutorial, onFinished, onExit }: Props) {
           <strong>Lernziel:</strong> {tutorial.goal}
         </p>
 
+        {tutorial.showVerbPositions && phase.id === 'wissen' ? (
+          <section style={{ marginBottom: 16 }}>
+            <h3 style={{ marginBottom: 8 }}>Fachbegriffe · Verbstellung</h3>
+            <VerbPositionCards />
+          </section>
+        ) : null}
+
         {phase.sections.map((s) => (
           <section key={s.heading} style={{ marginBottom: 16 }}>
             <h3 style={{ marginBottom: 6 }}>{s.heading}</h3>
@@ -53,6 +62,8 @@ export function AreaTutorial({ tutorial, onFinished, onExit }: Props) {
             <p className="merke-text">{phase.example.note}</p>
           </div>
         ) : null}
+
+        {phase.verbPositionPractice ? <VerbPositionPractice /> : null}
 
         <div className="intro-actions" style={{ marginTop: 20 }}>
           {phaseIndex > 0 ? (

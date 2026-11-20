@@ -163,3 +163,8 @@
 .dnd-chip--locked .dnd-chip-label {
   cursor: default;
 }
+
+.verb-pos-grid{display:grid;gap:12px;margin:8px 0 16px;}
+@media(min-width:720px){.verb-pos-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.verb-pos-grid--compact{gap:8px;}
+.verb-pos-card{margin:0;}

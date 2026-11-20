@@ -186,7 +186,7 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
       {
         kind: 'act-move',
         title: 'Schiebe Gruppen nach vorn',
-        lead: 'Tippe eine Gruppe an und setze sie an den Satzanfang. Das finite Verb bleibt an Position 2.',
+        lead: 'Tippe eine Gruppe an und setze sie an den Satzanfang. Im Aussagesatz gilt Verbzweitstellung.',
         groups: ['Der kleine Hund', 'schläft', 'unter dem Tisch'],
         verbIndexes: [1],
         targets: [
@@ -194,7 +194,7 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
           'Der kleine Hund schläft unter dem Tisch.',
         ],
         hint: 'Wähle eine Gruppe (nicht das Verb) und tippe „Nach vorn“.',
-        success: 'Was sich gemeinsam verschieben lässt, gehört zusammen.',
+        success: 'Was sich gemeinsam verschieben lässt, gehört zusammen – Verbzweitstellung bleibt.',
       },
       {
         kind: 'observe',
@@ -236,7 +236,7 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
       {
         kind: 'act-move',
         title: 'Probiere Umsstellungen',
-        lead: 'Verschiebe Gruppen. Das Verb bleibt an Position 2.',
+        lead: 'Verschiebe Gruppen. Im Aussagesatz gilt Verbzweitstellung.',
         groups: ['Mia', 'liest', 'nach dem Unterricht', 'ein Buch'],
         verbIndexes: [1],
         targets: [
@@ -245,7 +245,7 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
           'Mia liest nach dem Unterricht ein Buch.',
         ],
         hint: 'Tippe eine Gruppe (außer dem Verb) und setze sie nach vorn.',
-        success: 'Mehrere Stellungen sind möglich – die Gruppen bleiben intakt.',
+        success: 'Mehrere Umsstellungen sind möglich – Verbzweitstellung bleibt erhalten.',
         revealTerm: true,
       },
       {
@@ -254,23 +254,26 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
         lead: 'Diese Prüfung heißt Verschiebeprobe.',
         points: [
           'Satzglieder sind die Einheiten, die sich verschieben lassen.',
-          'Das finite Verb bleibt in Aussage-Sätzen an Position 2.',
-          'Mehrteilige Prädikate wandern nicht als ein Block an den Anfang.',
+          'Aussagesatz: Verbzweitstellung – finites Verb nach dem ersten Satzglied.',
+          'Entscheidungsfrage / Aufforderung: Verberststellung.',
+          'Nebensatz: Verbletztstellung.',
+          'Mehrteilige Prädikate (Satzklammer) wandern nicht als Block an den Anfang.',
         ],
       },
       {
         kind: 'explain',
         title: 'Kurz erklärt',
-        lead: 'Die Verschiebeprobe hilft, Grenzen zu finden.',
+        lead: 'Die Verschiebeprobe hilft, Grenzen zu finden – und die Verbstellung zu prüfen.',
         body: [
           'Wir fragen: Was kann gemeinsam nach vorn?',
           'So trennen wir Satzglieder zuverlässig voneinander.',
+          'Fachbegriffe: Verberststellung, Verbzweitstellung, Verbletztstellung.',
         ],
       },
       {
         kind: 'merksatz',
         title: 'Merke',
-        merke: 'Mit der Verschiebeprobe findest du Satzglieder: Was sich gemeinsam verschieben lässt, ist ein Satzglied.',
+        merke: 'Mit der Verschiebeprobe findest du Satzglieder. Im Aussagesatz bleibt Verbzweitstellung.',
       },
     ],
   },
@@ -366,7 +369,7 @@ export const FOUNDATION_MODULES: FoundationModule[] = [
         title: 'Beobachtung',
         lead: 'Mehrteilige Prädikate können auseinanderstehen.',
         points: [
-          'Finite Verbform oft in Position 2',
+          'Aussagesatz: Verbzweitstellung; Frage: Verberststellung; Nebensatz: Verbletztstellung',
           'Zweiter Teil (Partizip/Partikel) oft am Ende',
           'Bei der Verschiebeprobe wandert nicht das ganze Prädikat als Block nach vorn',
         ],

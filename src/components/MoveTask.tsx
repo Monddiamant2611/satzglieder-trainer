@@ -29,6 +29,11 @@ type Props = {
   validSentences: string[]
   prompt: string
   soft?: boolean
+  /**
+   * When true (tutorials/foundations), show Verbzweitstellung guidance on locked verb chips.
+   * Independent practice keeps V2 DnD mechanics but no solution-revealing position markers.
+   */
+  guideMarkers?: boolean
   onResult: (ok: boolean) => void
   explainCorrect: string
   explainWrong: string
@@ -132,6 +137,7 @@ export function MoveTask({
   validSentences,
   prompt,
   soft,
+  guideMarkers = false,
   onResult,
   explainCorrect,
   explainWrong,
@@ -155,11 +161,15 @@ export function MoveTask({
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
   )
 
+  const verbBlockHint = guideMarkers
+    ? 'Verbzweitstellung: Das finite Verb bleibt nach dem ersten Satzglied.'
+    : null
+
   const moveToFront = (orderIndex: number) => {
     if (checked) return
     const groupId = order[orderIndex]
     if (verbSet.has(groupId)) {
-      setBlockHint('Dieses Satzglied bleibt an Position 2.')
+      if (verbBlockHint) setBlockHint(verbBlockHint)
       return
     }
     const without = order.filter((_, i) => i !== orderIndex)
@@ -175,7 +185,7 @@ export function MoveTask({
     const groupId = order[orderIndex]
     if (verbSet.has(groupId)) {
       setPicked(null)
-      setBlockHint('Dieses Satzglied bleibt an Position 2.')
+      if (verbBlockHint) setBlockHint(verbBlockHint)
       return
     }
     setBlockHint(null)
@@ -186,7 +196,7 @@ export function MoveTask({
     if (checked) return
     const id = Number(event.active.id)
     if (isVerbGroup(id, verbIndexes)) {
-      setBlockHint('Dieses Satzglied bleibt an Position 2.')
+      if (verbBlockHint) setBlockHint(verbBlockHint)
       setActiveId(null)
       return
     }
@@ -208,7 +218,7 @@ export function MoveTask({
     const a = Number(active.id)
     const o = Number(over.id)
     if (isVerbGroup(a, verbIndexes)) {
-      setBlockHint('Dieses Satzglied bleibt an Position 2.')
+      if (verbBlockHint) setBlockHint(verbBlockHint)
       return
     }
     if (a === o) return

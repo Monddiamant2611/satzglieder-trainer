@@ -1,4 +1,5 @@
 import type { AreaTutorial } from '../data/tutorials'
+import { VerbPositionCards } from './VerbPositionCards'
 
 type Props = {
   tutorial: AreaTutorial
@@ -21,6 +22,11 @@ export function RuleRefresh({ tutorial, onContinue, onOpenTutorial, onSkip }: Pr
             </li>
           ))}
         </ul>
+        {tutorial.showVerbPositions ? (
+          <div style={{ marginTop: 12, marginBottom: 8 }}>
+            <VerbPositionCards compact />
+          </div>
+        ) : null}
         <div className="exercise-actions">
           <button type="button" className="primary-button" onClick={onContinue}>
             Runde starten

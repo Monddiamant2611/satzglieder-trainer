@@ -19,6 +19,13 @@ import { MarkingTask } from './MarkingTask'
 import { MoveTask } from './MoveTask'
 import { SentenceSplitter } from './SentenceSplitter'
 import { FeedbackPanel } from './FeedbackPanel'
+import { VerbPositionMoveLabelTask } from './VerbPositionMoveLabelTask'
+import {
+  VERB_POSITION_CHOICES,
+  VERB_POSITION_META,
+  type VerbPositionItem,
+  type VerbPositionMoveItem,
+} from '../data/verbPosition'
 
 export type TaskItem =
   | { type: 'boundary'; data: BoundaryItem }
@@ -32,6 +39,8 @@ export type TaskItem =
   | { type: 'full_analysis'; data: FullAnalysisItem }
   | { type: 'wordclass'; data: WordclassItem }
   | { type: 'error_analysis'; data: ErrorAnalysisItem }
+  | { type: 'verb_position'; data: VerbPositionItem }
+  | { type: 'verb_position_move'; data: VerbPositionMoveItem }
 
 type Props = {
   item: TaskItem
@@ -60,21 +69,37 @@ export function TaskRenderer({ item, onResult }: Props) {
           verbIndexes={verbs}
           validSentences={item.data.valid}
           originalSentence={item.data.sentence}
-          prompt="Ziehe Satzglieder per Drag-and-Drop. Das finite Verb bleibt an Position 2."
-          explainCorrect="Diese Umsstellung ist möglich – die Gruppen bleiben intakt."
-          explainWrong="Prüfe, ob die Gruppen zusammengeblieben sind und das Verb an Position 2 steht."
+          prompt="Ziehe Satzglieder per Drag-and-Drop. Im Aussagesatz gilt Verbzweitstellung."
+          explainCorrect="Diese Umsstellung ist möglich – Verbzweitstellung und Satzgliedgrenzen stimmen."
+          explainWrong="Prüfe die Gruppen und die Verbzweitstellung (finites Verb nach dem ersten Satzglied)."
           onResult={onResult}
         />
       )
     }
+    case 'verb_position': {
+      const meta = VERB_POSITION_META[item.data.position]
+      return (
+        <ClassificationTask
+          prompt="Welche Verbstellung liegt vor? Wähle den Fachbegriff."
+          sentence={item.data.sentence}
+          choices={VERB_POSITION_CHOICES}
+          correctId={item.data.position}
+          explainCorrect={`Richtig: ${meta.term} – ${meta.short}.`}
+          explainWrong="Vergleiche: Verberststellung (Frage/Aufforderung), Verbzweitstellung (Aussagesatz), Verbletztstellung (Nebensatz)."
+          onResult={onResult}
+        />
+      )
+    }
+    case 'verb_position_move':
+      return <VerbPositionMoveLabelTask data={item.data} onResult={onResult} />
     case 'predicate':
       return (
         <MarkingTask
           sentence={item.data.sentence}
           targetPhrases={item.data.parts}
-          prompt="Markiere alle Teile des Prädikats."
+          prompt="Markiere alle Teile des Prädikats (auch Satzklammer)."
           explainCorrect="Alle Teile des Prädikats sind markiert."
-          explainWrong="Denk an mehrteilige Formen und Partikelverben – markiere alle Teile."
+          explainWrong="Denk an Satzklammer und Partikelverben – markiere alle Teile des Prädikats."
           onResult={onResult}
         />
       )

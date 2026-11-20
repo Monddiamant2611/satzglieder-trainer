@@ -8,6 +8,8 @@ export type TutorialPhase = {
   sections: { heading: string; body: string[] }[]
   /** Optional guided mini-example (shown, not scored). */
   example?: { sentence: string; note: string }
+  /** Soft interactive verb-position practice in tutorial. */
+  verbPositionPractice?: boolean
 }
 
 export type AreaTutorial = {
@@ -16,6 +18,8 @@ export type AreaTutorial = {
   goal: string
   refreshBullets: string[]
   phases: TutorialPhase[]
+  /** Show Fachbegriffe Verbstellung glossary cards. */
+  showVerbPositions?: boolean
 }
 
 const TRAIN_AREA_IDS: AreaId[] = [
@@ -122,12 +126,15 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
   move: {
     areaId: 'move',
     title: 'Verschiebeprobe',
-    goal: 'Du prüfst mit Umsstellungen, was ein Satzglied ist.',
+    goal: 'Du prüfst mit Umsstellungen, was ein Satzglied ist – und benennst die Verbstellung fachsprachlich.',
     refreshBullets: [
-      'Ziehe ganze Satzglieder – nicht einzelne Buchstaben.',
-      'In Aussagesätzen steht das finite Verb an Position 2.',
-      'Mehrere korrekte Umsstellungen sind möglich.',
+      'Aussagesatz: Verbzweitstellung (finites Verb an Position 2).',
+      'Frage/Aufforderung: Verberststellung.',
+      'Nebensatz: Verbletztstellung.',
+      'Mehrteilige Prädikate: Satzklammer – finites Verb und zweiter Teil können auseinanderstehen.',
+      'Ziehe ganze Satzglieder; mehrere gültige Umsstellungen sind möglich.',
     ],
+    showVerbPositions: true,
     phases: [
       {
         id: 'wissen',
@@ -135,41 +142,48 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
         sections: [
           {
             heading: 'Lernziel',
-            body: ['Du verschiebst Satzglieder und erkennst gültige Sätze.'],
+            body: [
+              'Du verschiebst Satzglieder und erkennst Verbzweitstellung, Verberststellung und Verbletztstellung.',
+            ],
           },
           {
             heading: 'Erkennungsfragen',
             body: [
               'Bleibt der Satz sinnvoll?',
-              'Steht das finite Verb weiterhin an Position 2?',
+              'Wo steht das finite Verb – Position 1, 2 oder am Ende?',
+              'Handelt es sich um Haupt- oder Nebensatz?',
             ],
           },
           {
             heading: 'Regeln',
             body: [
               'Nur ganze Satzglieder wandern.',
-              'Das finite Verb bleibt in Aussagesätzen an Position 2 (V2).',
-              'Mehrteilige Prädikate wandern nicht als ein Block an den Anfang.',
+              'Aussagesatz (Hauptsatz): Verbzweitstellung – nach dem ersten Satzglied folgt das finite Verb.',
+              'Entscheidungsfrage / Aufforderung: Verberststellung.',
+              'Nebensatz (weil, dass, als, …): Verbletztstellung.',
+              'Mehrteilige Prädikate: Satzklammer (z. B. hat … gelesen); das Finitum bestimmt die Stellung.',
             ],
           },
           {
             heading: 'Typische Fehler',
             body: [
+              'Verbzweitstellung mit Verbletztstellung verwechseln.',
               'Nur ein Wort aus einer Gruppe verschieben.',
-              'Das Verb frei an den Anfang ziehen.',
+              'Das finite Verb im Aussagesatz an den Anfang ziehen.',
             ],
           },
           {
             heading: 'So bedienst du die Übung',
             body: [
-              'Ziehe Satzglieder per Drag-and-Drop (oder wähle und tippe „An den Anfang“).',
+              'Ziehe Satzglieder per Drag-and-Drop (oder „An den Anfang“).',
+              'Benenne danach die Verbstellung mit dem Fachbegriff.',
               '„Ausgangssatz“ setzt zurück. Dann „Prüfen“.',
             ],
           },
         ],
         example: {
           sentence: 'Am Nachmittag schläft der Hund im Körbchen.',
-          note: 'Umsstellung von „Der Hund schläft am Nachmittag im Körbchen.“ – Verb bleibt an Position 2.',
+          note: 'Umsstellung möglich – Verbzweitstellung bleibt: erstes Satzglied + finites Verb.',
         },
       },
       {
@@ -177,12 +191,14 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
         title: 'Gemeinsam ausprobieren',
         sections: [
           {
-            heading: 'Tipp',
+            heading: 'Gemeinsam',
             body: [
-              'Probiere zwei Umsstellungen und vergleiche: Bleiben die Gruppen intakt?',
+              'Vergleiche die drei Beispiele und ordne den Fachbegriff zu.',
+              'Achte auf Satzklammer bei mehrteiligen Prädikaten.',
             ],
           },
         ],
+        verbPositionPractice: true,
       },
       {
         id: 'selbst',
@@ -191,7 +207,8 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
           {
             heading: 'Bereit?',
             body: [
-              'Mehrere Reihenfolgen können richtig sein – es zählt die grammatische Gültigkeit.',
+              'In der Runde gibt es keine Positionsmarkierung – du erkennst die Stellung selbst.',
+              'Mehrere Umsstellungen können richtig sein, solange Verbzweitstellung gilt.',
             ],
           },
         ],
@@ -204,9 +221,11 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
     goal: 'Du markierst alle Teile des Prädikats.',
     refreshBullets: [
       'Frage: Was geschieht?',
-      'Mehrteilig: z. B. hat … gemacht, räumt … auf.',
+      'Mehrteilig: Satzklammer (hat … gemacht, räumt … auf).',
+      'Im Hauptsatz steht das Finitum in Verbzweitstellung; der zweite Teil oft am Ende.',
       'Markiere alle Teile, auch wenn sie auseinanderstehen.',
     ],
+    showVerbPositions: true,
     phases: [
       {
         id: 'wissen',
@@ -214,7 +233,7 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
         sections: [
           {
             heading: 'Lernziel',
-            body: ['Du findest das Prädikat – einteilig oder mehrteilig.'],
+            body: ['Du findest das Prädikat – einteilig oder mehrteilig (Satzklammer).'],
           },
           {
             heading: 'Erkennungsfragen',
@@ -225,7 +244,8 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
             body: [
               'Das Prädikat kann aus mehreren Teilen bestehen.',
               'Partikelverben: finite Form + Partikel (schreibt … auf).',
-              'Perfekt u. Ä.: Hilfsverb + Partizip (hat … geschlafen).',
+              'Perfekt u. Ä.: Hilfsverb + Partizip (hat … geschlafen) → Satzklammer.',
+              'Im Aussagesatz: Verbzweitstellung des Finitums; im Nebensatz oft Verbletztstellung.',
             ],
           },
           {
@@ -572,9 +592,11 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
     goal: 'Du analysierst Sätze Schritt für Schritt.',
     refreshBullets: [
       'Reihenfolge: Prädikat → Subjekt → Objekte → Adverbiale.',
-      'Mehrteilige Prädikate vollständig markieren.',
+      'Hauptsatz meist Verbzweitstellung; Nebensatz Verbletztstellung.',
+      'Mehrteilige Prädikate / Satzklammer vollständig markieren.',
       'Immer ganze Satzglieder, nicht nur Einzelwörter.',
     ],
+    showVerbPositions: true,
     phases: [
       {
         id: 'wissen',
@@ -582,7 +604,7 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
         sections: [
           {
             heading: 'Lernziel',
-            body: ['Du bestimmst alle Satzglieder in fester Reihenfolge.'],
+            body: ['Du bestimmst alle Satzglieder in fester Reihenfolge und beachtest die Verbstellung.'],
           },
           {
             heading: 'Erkennungsfragen',
@@ -644,9 +666,11 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
     goal: 'Du wendest alles gemischt an – inkl. Fehlerfinden und Wortarten.',
     refreshBullets: [
       'Lies die Aufgabenstellung genau.',
+      'Verbstellung: Verberststellung · Verbzweitstellung · Verbletztstellung.',
       'Wechsle bewusst zwischen Grenzen, Proben, Rollen und Wortarten.',
       'Bei Fehlerfinden: nur die falschen Zuordnungen antippen.',
     ],
+    showVerbPositions: true,
     phases: [
       {
         id: 'wissen',
@@ -654,12 +678,15 @@ export const AREA_TUTORIALS: Record<string, AreaTutorial> = {
         sections: [
           {
             heading: 'Lernziel',
-            body: ['Du trainierst gemischt und erkennst auch fehlerhafte Analysen sowie Wortarten.'],
+            body: [
+              'Du trainierst gemischt – inkl. Verbstellung (Fachbegriffe), Fehlerfinden und Wortarten.',
+            ],
           },
           {
             heading: 'Was kommt vor?',
             body: [
               'Satzgliedgrenzen, Verschiebeprobe, Prädikat/Subjekt/Objekte/Adverbiale.',
+              'Verbstellung benennen: Verberststellung, Verbzweitstellung, Verbletztstellung.',
               'Fehlerfinden: falsche Etiketten erkennen.',
               'Wortarten: Substantiv, Verb, Adjektiv, Präposition.',
             ],

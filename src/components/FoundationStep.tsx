@@ -194,8 +194,9 @@ export function FoundationStep({ screen, onContinue }: Props) {
           verbIndexes={screen.verbIndexes}
           validSentences={screen.targets}
           originalSentence={`${screen.groups.join(' ')}.`}
-          prompt="Ziehe Satzglieder an den Anfang oder an eine andere Stelle (Verb bleibt an Position 2)."
+          prompt="Ziehe Satzglieder um. Im Aussagesatz gilt Verbzweitstellung."
           soft
+          guideMarkers
           explainCorrect={screen.success}
           explainWrong={screen.hint}
           onResult={() => setActed(true)}
