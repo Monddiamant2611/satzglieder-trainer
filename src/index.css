@@ -43,3 +43,115 @@
   line-height: 1.4;
   padding: 0 var(--space-2);
 }
+
+/* Drag-and-drop Satzglieder (MoveTask) */
+.dnd-sentence {
+  touch-action: pan-y;
+  overflow: visible;
+}
+.dnd-row {
+  align-items: flex-start;
+  gap: 12px;
+}
+.dnd-chip-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  max-width: 100%;
+}
+.dnd-chip-wrap.dnd-insert-before::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  bottom: 18px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+  pointer-events: none;
+}
+.dnd-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: var(--touch);
+  padding: 0.35rem 0.55rem 0.35rem 0.35rem;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  max-width: min(100%, 22rem);
+}
+.dnd-chip--verb {
+  cursor: default;
+  touch-action: manipulation;
+  opacity: 0.95;
+}
+.dnd-chip--dragging {
+  cursor: grabbing;
+}
+.dnd-chip--overlay {
+  cursor: grabbing;
+  box-shadow: var(--shadow-card), 0 10px 28px #2a242226;
+  transform: scale(1.03);
+}
+.dnd-handle {
+  flex: 0 0 auto;
+  min-width: 36px;
+  min-height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--zone);
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: grab;
+  touch-action: none;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.dnd-handle--locked {
+  background: transparent;
+  cursor: default;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.dnd-chip-label {
+  flex: 1 1 auto;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: inherit;
+  padding: 0.25rem 0.35rem;
+  min-height: 36px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.dnd-chip--verb .dnd-chip-label {
+  cursor: default;
+}
+.dnd-verb-tag {
+  font-size: var(--fs-kicker);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  font-weight: 700;
+  padding-left: 0.25rem;
+}
+@media (width <= 600px) {
+  .dnd-chip {
+    max-width: 100%;
+  }
+  .dnd-row {
+    width: 100%;
+  }
+  .dnd-chip-wrap {
+    max-width: 100%;
+  }
+}

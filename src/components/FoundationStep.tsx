@@ -194,7 +194,7 @@ export function FoundationStep({ screen, onContinue }: Props) {
           verbIndexes={screen.verbIndexes}
           validSentences={screen.targets}
           originalSentence={`${screen.groups.join(' ')}.`}
-          prompt="Verschiebe Satzglieder an den Anfang."
+          prompt="Ziehe Satzglieder an den Anfang oder an eine andere Stelle (Verb bleibt an Position 2)."
           soft
           explainCorrect={screen.success}
           explainWrong={screen.hint}

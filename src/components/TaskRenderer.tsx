@@ -60,7 +60,7 @@ export function TaskRenderer({ item, onResult }: Props) {
           verbIndexes={verbs}
           validSentences={item.data.valid}
           originalSentence={item.data.sentence}
-          prompt="Verschiebe Satzglieder. Das finite Verb bleibt an Position 2."
+          prompt="Ziehe Satzglieder per Drag-and-Drop. Das finite Verb bleibt an Position 2."
           explainCorrect="Diese Umsstellung ist möglich – die Gruppen bleiben intakt."
           explainWrong="Prüfe, ob die Gruppen zusammengeblieben sind und das Verb an Position 2 steht."
           onResult={onResult}
