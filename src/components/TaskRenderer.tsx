@@ -72,8 +72,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           validSentences={item.data.valid}
           originalSentence={item.data.sentence}
           prompt="Ziehe Satzglieder per Drag-and-Drop. Im Aussagesatz gilt Verbzweitstellung."
-          explainCorrect="Diese Umsstellung ist möglich – Verbzweitstellung und Satzgliedgrenzen stimmen."
-          explainWrong="Prüfe die Gruppen und die Verbzweitstellung (finites Verb nach dem ersten Satzglied)."
+          explainCorrect="Diese Umsstellung ist möglich – Verbzweitstellung und Satzgliedgrenzen stimmen. Beispiel: „Am Dienstag besucht die Klasse das Stadtmuseum.“"
+          explainWrong="Nur ganze Satzglieder wandern. Im Aussagesatz bleibt das finite Verb an zweiter Stelle (Verschiebeprobe)."
           onResult={onResult}
         />
       )
@@ -100,8 +100,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={item.data.parts}
           prompt="Markiere alle Teile des Prädikats (auch Satzklammer)."
-          explainCorrect="Alle Teile des Prädikats sind markiert."
-          explainWrong="Denk an Satzklammer und Partikelverben – markiere alle Teile des Prädikats."
+          explainCorrect="Alle Teile des Prädikats sind markiert. Beispiel: „bringt … zurück“, „hat … vergessen“."
+          explainWrong="Was geschieht? Markiere alle Verbteile – auch Partikel und Partizip (Satzklammer)."
           onResult={onResult}
         />
       )
@@ -113,8 +113,8 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.subject]}
           prompt="Markiere das Subjekt (Wer oder was?)."
-          explainCorrect="Das Subjekt ist richtig markiert."
-          explainWrong="Frage: Wer oder was + Prädikat? Markiere die ganze Gruppe."
+          explainCorrect="Das Subjekt ist richtig markiert. Beispiel: Wer schläft? → „der kleine Hund“ (ganze Gruppe)."
+          explainWrong="Frage: Wer oder was + Prädikat? Markiere die ganze Wortgruppe, nicht nur das Nomen."
           onResult={onResult}
         />
       )
@@ -124,7 +124,7 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.obj]}
           prompt="Markiere das Akkusativobjekt (Wen oder was?)."
-          explainCorrect="Das Akkusativobjekt ist richtig markiert."
+          explainCorrect="Das Akkusativobjekt ist richtig markiert. Beispiel: Wen oder was liest Mia? → „einen spannenden Roman“."
           explainWrong="Stelle die Frage: Wen oder was? – und markiere die ganze Nominalgruppe."
           onResult={onResult}
         />
@@ -135,7 +135,7 @@ export function TaskRenderer({ item, onResult }: Props) {
           sentence={item.data.sentence}
           targetPhrases={[item.data.obj]}
           prompt="Markiere das Dativobjekt (Wem?)."
-          explainCorrect="Das Dativobjekt ist richtig markiert."
+          explainCorrect="Das Dativobjekt ist richtig markiert. Beispiel: Wem hilft die Lehrerin? → „dem neuen Schüler“."
           explainWrong="Stelle die Frage: Wem? – und markiere die ganze Nominalgruppe."
           onResult={onResult}
         />
@@ -152,8 +152,8 @@ export function TaskRenderer({ item, onResult }: Props) {
             ['temporal', 'lokal', 'kausal', 'modal'] as const
           ).map((id) => ({ id, label: ADVERBIAL_LABELS[id] }))}
           correctId={item.data.role}
-          explainCorrect="Die Zuordnung stimmt."
-          explainWrong="Orientiere dich an der Funktion: Wann? Wo? Warum? Wie?"
+          explainCorrect="Die Zuordnung stimmt. Temporal = Wann?, lokal = Wo/Wohin?, kausal = Warum?, modal = Wie?"
+          explainWrong="Orientiere dich an der Funktion im Satz: Wann? Wo? Warum? Wie? – nicht nur an der Präposition."
           onResult={onResult}
         />
       )
@@ -249,8 +249,8 @@ function BothObjectsTask({
         sentence={data.sentence}
         targetPhrases={[data.dative]}
         prompt="Zuerst: Markiere das Dativobjekt (Wem?)."
-        explainCorrect="Dativobjekt richtig markiert."
-        explainWrong="Frage: Wem? – ganze Gruppe markieren."
+        explainCorrect="Dativobjekt richtig markiert. Frage: Wem?"
+        explainWrong="Frage: Wem? – ganze Gruppe markieren (nicht mit Wen oder was? verwechseln)."
         onResult={(ok) => {
           setDatOk(ok)
           setPhase('dat-done')
@@ -279,8 +279,8 @@ function BothObjectsTask({
         sentence={data.sentence}
         targetPhrases={[data.accusative]}
         prompt="Markiere das Akkusativobjekt (Wen oder was?)."
-        explainCorrect="Akkusativobjekt richtig markiert."
-        explainWrong="Frage: Wen oder was? – ganze Gruppe markieren."
+        explainCorrect="Akkusativobjekt richtig markiert. Frage: Wen oder was?"
+        explainWrong="Frage: Wen oder was? – ganze Gruppe markieren (nicht mit Wem? verwechseln)."
         onResult={(ok) => onResult(datOk && ok)}
       />
     </>
