@@ -1,5 +1,10 @@
+import {
+  EXT_MOVE_GROUPS,
+  EXT_MOVE_VERB_INDEX,
+} from '../data/extensionPool/moveGroups'
+
 /** Prepared constituent groups for Verschiebeprobe items (finite verb kept separate). */
-export const MOVE_GROUPS: Record<string, string[]> = {
+const BASE_MOVE_GROUPS: Record<string, string[]> = {
   m01: ['Der Hund', 'schläft', 'am Nachmittag', 'im Körbchen'],
   m02: ['Mia', 'liest', 'nach dem Unterricht', 'ein neues Buch'],
   m03: ['Der junge Fuchs', 'beobachtet', 'im Garten', 'die Hühner'],
@@ -13,7 +18,7 @@ export const MOVE_GROUPS: Record<string, string[]> = {
 }
 
 /** Indices of finite verb (and reflexive) that stay in V2 — not freely dragged to front alone. */
-export const MOVE_VERB_INDEX: Record<string, number[]> = {
+const BASE_MOVE_VERB_INDEX: Record<string, number[]> = {
   m01: [1],
   m02: [1],
   m03: [1],
@@ -24,4 +29,14 @@ export const MOVE_VERB_INDEX: Record<string, number[]> = {
   m08: [1],
   m09: [1, 2],
   m10: [1],
+}
+
+export const MOVE_GROUPS: Record<string, string[]> = {
+  ...BASE_MOVE_GROUPS,
+  ...EXT_MOVE_GROUPS,
+}
+
+export const MOVE_VERB_INDEX: Record<string, number[]> = {
+  ...BASE_MOVE_VERB_INDEX,
+  ...EXT_MOVE_VERB_INDEX,
 }

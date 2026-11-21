@@ -5,7 +5,7 @@ import { TaskRenderer } from '../components/TaskRenderer'
 import { TrainerProgress } from '../components/TrainerProgress'
 import { AreaTutorial } from '../components/AreaTutorial'
 import { RuleRefresh } from '../components/RuleRefresh'
-import { buildRound, taskLabel } from '../lib/session'
+import { buildRound, noteCorrectItem, noteWrongItem, taskLabel } from '../lib/session'
 import {
   bumpRoundStarted,
   isTutorialComplete,
@@ -87,6 +87,12 @@ export function SessionPage({
 
   const handleResult = (ok: boolean) => {
     resultsRef.current[index] = { ok, type: item.type }
+    const raw = item.data as { id?: string; word?: string; class?: string }
+    const id =
+      raw.id ??
+      (raw.word && raw.class ? `wordclass:${raw.word}:${raw.class}` : undefined)
+    if (ok) noteCorrectItem(id)
+    else noteWrongItem(id)
     setAwaitingNext(true)
   }
 

@@ -12,6 +12,8 @@ export type MoveItem = {
   id: string
   sentence: string
   valid: string[]
+  difficulty?: number
+  target?: string
 }
 
 export type PredicateItem = {
@@ -25,13 +27,16 @@ export type SubjectItem = {
   id: string
   sentence: string
   subject: string
-  predicate: string
+  predicate: string | string[]
+  difficulty?: number
 }
 
 export type ObjectItem = {
   id: string
   sentence: string
   obj: string
+  difficulty?: number
+  predicate?: string | string[]
 }
 
 export type BothObjectsItem = {
@@ -39,6 +44,7 @@ export type BothObjectsItem = {
   sentence: string
   dative: string
   accusative: string
+  difficulty?: number
 }
 
 export type AdverbialItem = {
@@ -46,11 +52,14 @@ export type AdverbialItem = {
   sentence: string
   target: string
   role: 'temporal' | 'lokal' | 'kausal' | 'modal'
+  difficulty?: number
 }
 
 export type WordclassItem = {
+  id?: string
   word: string
   class: string
+  example?: string
 }
 
 export type ErrorAnalysisItem = {
@@ -62,6 +71,7 @@ export type ErrorAnalysisItem = {
     correct?: string
     wrong: boolean
   }[]
+  difficulty?: number
 }
 
 export type FullAnalysisItem = {
